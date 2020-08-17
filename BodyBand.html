@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dr James Apps | BodyBand</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      .body {
+        padding-top: 2.5rem;
+      }
+    </style>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="navbar-brand">Dr James Apps</div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Front page<span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+      
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="mailto:japps@learningchem.co.uk"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="https://github.com/jfspps"><i class="fa fa-github" aria-hidden="true"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://www.linkedin.com/in/james-apps-b8422367"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+  <div class="jumbotron pb-1 bg-secondary text-white">
+    <div class="container">
+      <h2>BodyBand</h2>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Motivation</h2>
+        <h5>Last edited: 17th Aug 2020</h5>
+        <p>
+          I found that there were several mobile apps which record free-weight or machine settings but nothing for those who workout with resistance bands. I then set out to build my first Java app, which I would use, while gaining more experience with Java 11. I planned a rough <a href="https://github.com/jfspps/BodyBand/blob/master/docs/Project%20outline.docx">outline</a> of the project before proceeding to code.
+        </p>
+        <p>
+          I have been learning how to write Java 11 from an online beginner's course and applied what I learned to this project. Once the fundamental language concepts were covered, I thought it would prove efficient and more engaging if I build BodyBand alongside the course's exercises. Initially, I framed the project as a mobile application. While it is arguable that I should have written the application in, for example, Kotlin, I wanted to test and showcase my learning in Java.
+        </p>
+        <h2>Technologies</h2>
+        <p>
+          BodyBand was built with Java 11, the database handled with SQLite 3 (in line with potential mobile deployment) and the frontend driven by JavaFX 11. I started building Java applications in the Eclipse IDE but found problems with compiling projects with multiple JavaFX scenes. I then moved to IntelliJ, the same IDE used by the course, and have had none of the previous issues since. 
+        </p>
+      </div>
+      <div class="col-md-6">
+        <figure>
+          <img img alt="BodyBand" src="images/BodyBand_exerciseList.png" class="mx-auto img-fluid d-block" style="width: 70%">
+        </figure>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <h2>With and without Gradle</h2>
+            <p>
+              There are two repositories for BodyBand. The <a href="https://github.com/jfspps/BodyBand">first</a> handled all external libraries manually (including JavaFX and SQLite) with some input via classpaths or module_info.java. As you will see from the commit histories, after about one month of development, with BodyBand in a functional state on the desktop, I investigated how I would port BodyBand to Android. This was when I learned about more comprehensive build tools. The <a href="https://github.com/jfspps/BodyBandGradle">second</a>, more developed repository was built with Gradle handling the libraries. (In a few months, I would come to learn about Maven too, which incidentally I find easier to use compared to Gradle.) BodyBand is still a work in progress and I hope to port the JavaFX project to Android at some point. Currently, I am unable to compile the demo Gluon JavaFX apps with Gradle.
+            </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Model and controller</h2>
+          <p>
+            What follows is a more detailed overview of the development of BodyBand, using the non-Gradle repository with more commit history as source material. Some of the code was initially written in the same java file but as the project developed, the code was segregated into different java files and in some cases different classes. As I look back on some of the earlier code, there are areas which I would adjust to make it easier to read but given the time I have to present my work, this task will have to be put on hold for now.
+          </p>
+          <p>
+            To put some context in place, a 'repetition' is one movement of weight or band. Normally, one would perform a number of repetitions (or 'reps') in a short time period and then rest before more exercises. Each group of repetitions is known as a 'set'.
+          </p>
+          <p>
+            The model is built around three classes, <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbExercise.java">bbExercise</a>, <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbRepetition.java">bbRepetition</a> and <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbSet.java">bbSet</a>. Each class is essentially composed of String type properties and an Integer id. I learned that boxed types such as String and Integer can be null and I wanted to have the option available in the future. A GUI representation of the database fields available is shown opposite, in this case, for bbExercise. The id field can only be edited in SQLite. As explained later, the user can edit database entries on this page but is expected to use a different, more informal page.
+          </p>
+          <p>
+            The controller for BodyBand is represented by <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java">bbDatabase</a>. At the beginning of the class, I use private final Strings to set a few constant database field indices and then proceed to list the SQL queries as PreparedStatements. One important area which the course advised to look out for are SQL injection attacks, so implementing PreparedStatements which only recognise a limited set of data input was desired. Each PreparedStatement is associated with the SQL query string and then instantiated by open(). Resources are released with close(). Both open() and close() are executed in the <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/Main.java">main class</a>.
+          </p>
+          <p>
+            The remaining methods process data from the model classes in preparation for the viewer. In hindsight, I would probably look into breaking up <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java">bbDatabase</a> such that it handles each model class individually (exercise, set and repetition). There are three major sections. Retrieval starts from <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L273">line 273</a> and insertion starts from <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L992">line 992</a>. Deletion methods start from <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L1269">line 1269</a>. In each section are the grouped methods for each model class. The form of the CRUD style methods is largely the same, in which current values are sought for on the database and then created or updated as needed.
+          </p>
+          <p>
+            A bootstrap class which initialises some data for demonstration purposes is provided by <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbSQLiteDB.java">bbSQLiteDB.java</a>.
+          </p>
+          
+        </div>
+        <div class="col-md-6">
+          <figure>
+            <img img alt="BodyBand" src="images/BodyBand_editEx.png" class="mx-auto img-fluid d-block" style="width: 80%">
+          </figure>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <figure>
+            <img img alt="BodyBand" src="images/BodyBand_editSet2.png" class="mx-auto img-fluid d-block" style="width: 80%">
+          </figure>
+        </div>
+        
+        <div class="col-md-6">
+          <h2>Repetition string or repString</h2>
+          <p>
+            One challenging point, which is easier to explain fully as opposed to summarise here, is related to database design. Each exercise is characterised by two statistics: band tension and number of repetitions. Starting from the band tension, it is easy to store and retrieve different band tensions for an exercise because there are limited number of tensions, usually about six bands with different tensions. I would have one exercise record for each tension, so at most, six records. Continuing, how would I also record the number of repetitions? I could store an exercise record with a different tension and a different number of repetitions. A user may 'go heavy' and record between one and four repetitions, or 'go lighter' and record anywhere up to 30 repetitions. Coupling both tension with repetition count leads to around 6*30, or 180 exercise records per set. A user may perform about three sets, and perhaps about five different exercises. In total, this is about 6*30*3*5 records per workout (i.e. per day). A lot of the repetition sequences would be repeated across different exercises or different workouts. To minimise database access, I designed a string, which I refer to as a 'repString' that states, for a given set, how many repetitions were completed. An example of this is shown opposite: "R_1_2_".
+          </p>
+          <p>
+            The repString "R_1_2_" is read left-to-right and means there was one repetition followed by two repetitions for a given exercise. It does not say what the tension was and could apply to any tension (or exercise or workout). The repString is stored in the database and mapped (one-to-many) to any set which applies to it. This approach reduces the number of database records and queries.
+          </p>
+          <p>
+            Parsing of the 'repString' is handled outside of the database, with <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L657">getRepListFromRepString()</a>, line 657, returning a List<>() of repetitions. Methods which validate repString are defined by <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L591">checkRepString()</a>, line 591 and methods which create a repString, <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L619">buildRepString()</a>, line 619, are handled independently. The effective removal of one or more of the numbers in the string is handled by <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L632">deleteRep()</a>, line 632. Individual values can be updated using <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L749">updateRepString()</a>, line 749. Normally, the user would not interact with repString directly and instead change values without knowing about repString.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Unit testing</h2>
+          <p>
+            BodyBand was also the first project where I learned about unit testing and at the time I focused on testing <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabaseTest2.java">bbDatabase</a>. There are still tests on other classes to be carried out before committing this project to production. All tests were carried out using JUnit 5, with some comparison of JUnit 4 (still apparently prevalent across the industry) covered in the course. I did not look forward to unit testing but very soon found it quite satisfying, showing each method working as planned.
+          </p>
+          
+          <h2>The FXML viewer</h2>
+          <p>
+            One considerable difference which I noticed was how different authors and tutorials approach the use of FXML. Some build controls (buttons, forms etc.) from a Java class whereas others write the FXML controls into the FXML file and then reference individual controls by ID from a java class. The course, and BodyBand, follow the latter approach.  Unless one wants to change the look of a control at run-time, to me the latter approach looks like a cleaner, more independent approach.
+          </p>
+          <p>
+            The figure opposite is intended to function on a touch-screen device and as you can see hides all of the underlying logic from the user. Compare this to the figure above for 'bent-over rowing'. The update and delete buttons are enabled only if a record or database entry is selected. When writing FXML files, I tended to use a combination of SceneBuilder and raw FXML file writing. Getting used to FXML and Bootstrap CSS were closely related in my experience. 
+          </p>
+          <p>
+            One other major challenge I had to overcome was the rendering of different scenes. The course I followed only built applications with one scene. Related to the above, some of the literature does explain multiple scene handling but by approaching FXML controls via java classes, which is not what I wanted to follow. Overall, after careful choice of static variables, I eventually addressed the problem by sending new scenes to the same stage. I built a new Parent object to form the basis of a new scene and then passed the scene to the <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/Main.java#L14">static Stage mainWindow</a>, line 14. All of the different scenes are defined in a separate class, <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/sceneNavigation.java">sceneNavigation</a>.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <figure>
+            <img img alt="BodyBand" src="images/BodyBand_newSet1.png" class="mx-auto img-fluid d-block" style="width: 70%">
+          </figure>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <figure>
+            <img img alt="BodyBand" src="images/BodyBand_repHistory.png" class="mx-auto img-fluid d-block" style="width: 70%">
+          </figure>
+        </div>
+        
+        <div class="col-md-6">
+          <h2>Concluding remarks</h2>
+          <p>
+            At this stage, BodyBand was near enough functional and after further testing, could be extended with more features (some are listed on the repository's <a href="https://github.com/jfspps/BodyBand">front page</a>). 
+          </p>
+          <p>
+            The Gradle build also includes automated and verifiable testing with CircleCI, a tool I learned about when developing my Student Record Management suite.
+          </p>
+          <p>
+            Most of the challenging areas were addressed or explained after I revisited the online course material, searched online forums as well as referred to my own copies of Herbert Schildt's 'Java: A Beginner's Guide' and 'Java: The Complete Reference'. 
+          </p>
+        </div>
+      </div>
+    <hr>
+  </div>
+  
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
