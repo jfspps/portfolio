@@ -73,7 +73,7 @@
       <div class="col-md-12">
         <h2>With and without Gradle</h2>
             <p>
-              There are two repositories for BodyBand. The <a href="https://github.com/jfspps/BodyBand">first</a> gathered all external libraries manually (including JavaFX and SQLite) with some input via module_info.java. BodyBand was considered complete after about one month of development. Out of curiosity, I investigated how I could port BodyBand to Android. This was when I became aware of Gradle and Gluon JavaFX plugins. The <a href="https://github.com/jfspps/BodyBandGradle">second</a> repository contains the Gradle build of BodyBand. Unfortunately, I am unable to compile the demo Gluon JavaFX apps with Gradle. With BodyBand in a completed state I decided to postpone the Android port.
+              There are two repositories for BodyBand. The <a href="https://github.com/jfspps/BodyBand">first</a> gathered all external libraries manually (including JavaFX and SQLite) with some input via module_info.java. BodyBand was considered complete after about one month of development. Out of curiosity, I investigated how I could port BodyBand to Android. This was when I became aware of Gradle and Gluon JavaFX plugins. The <a href="https://github.com/jfspps/BodyBandGradle">second</a> repository contains the Gradle build of BodyBand. Unfortunately, I have been unable to compile the demo Gluon JavaFX apps with Gradle. With BodyBand already in a completed state I decided to postpone the Android port for now.
             </p>
         </div>
       </div>
@@ -81,7 +81,7 @@
         <div class="col-md-6">
           <h2>Model and controller</h2>
           <p>
-            What follows is a more detailed overview of the development of BodyBand, using the non-Gradle repository with more commit history as source material. Some of the code was initially written in the same java file but as the project grew, the code was segregated into independent java classes. As I look back on some of the earlier code, there are areas which I would adjust to make it easier to read but given the time available each day, this task will have to be put on hold for now.
+            What follows is a more detailed overview of the development of BodyBand, using the non-Gradle repository with more commit history as source material. Some of the code was initially written in the same java file but as the project grew, the code was segregated into independent java classes.
           </p>
           <p>
             To put some context about BodyBand in place, a 'repetition' is one movement of weight or band. Normally, one would perform a number of repetitions (or 'reps') in a short time period and then rest before more exercises. Each group of repetitions is known as a 'set'.
