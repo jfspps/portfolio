@@ -12,7 +12,7 @@
 
   </head>
   <body>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color:rgb(224, 183, 147);">
     <div class="navbar-brand">Dr James Apps</div>
       
     <!-- collapsable button -->
@@ -44,16 +44,16 @@
           <a class="nav-link" href="mailto:japps@learningchem.co.uk"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="https://github.com/jfspps"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
+          <a class="nav-link" href="https://github.com/jfspps" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="https://www.linkedin.com/in/james-apps-b8422367"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+          <a class="nav-link" href="https://www.linkedin.com/in/james-apps-b8422367" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <div class="jumbotron pb-1 bg-secondary text-white">
+  <div class="jumbotron pb-1 pt-6" style="background-color:rgb(233, 220, 200);">
     <div class="container">
       <h2>LearningChem</h2>
     </div>
@@ -65,7 +65,7 @@
         <h2>Motivation</h2>
         <h5>Summary last edited 19th Aug 2020</h5>
         <p>
-          LearningChem is my effort to pass on what I have learned as an A-level and IBDP chemistry teacher. More relevant to software development, I felt it would be beneficial to learn the basics of web development even though I have no intention of becoming a front-end web developer. The GitHub repository for the demo version is <a href="https://github.com/jfspps/LearningChemDemo">here</a> and the live web application is found <a href="https://www.learningchem.co.uk">here</a>. LearningChem was developed before BodyBand and SRM.
+          LearningChem is my effort to pass on what I have learned as an A-level and IBDP chemistry teacher. More relevant to software development, I felt it would be beneficial to learn the basics of web development even though I have no intention of becoming a front-end web developer. The GitHub repository for the demo version is <a href="https://github.com/jfspps/LearningChemDemo" target="_blank">here</a> and the live web application is found <a href="https://www.learningchem.co.uk" target="_blank">here</a>. LearningChem was developed before BodyBand and SRM.
         </p>
         <h2>Technologies</h2>
         <p>
@@ -87,7 +87,7 @@
       </div>
       <div class="col-md-6">
         <p>
-          Central to the function of LearningChem is the controller <a href="https://github.com/jfspps/LearningChemDemo/blob/master/app.js">app.js</a>. All routing is handled using Express. Each article EJS file is identified in an array to reduce the number of get() calls. The following snippet represents an example of something I wrote which was not part of the course.
+          Central to the function of LearningChem is the controller <a href="https://github.com/jfspps/LearningChemDemo/blob/master/app.js" target="_blank">app.js</a>. All routing is handled using Express. Each article EJS file is identified in an array to reduce the number of get() calls. The following snippet represents an example of something I wrote which was not part of the course.
         </p>
         <pre><code>
         app.get("/:someDir", function(req, res){
@@ -115,7 +115,7 @@
             To gauge how well received LearnChem is, I implemented a MongoDB 4 database to store user comments, questions and contact details. At this stage, I do not intend on vetting submitted comments for future publication. Instead, I respond to users on an individual basis, where appropriate. I did not know SQL at the time and decided to follow the course, utilising MongoDB. LearningChem connects to MongoDB via Mongoose 5. The schema is a collection of string types.
         </p>
         <p>
-          To reduce robot activity, I researched and adapted a so-called 'honey-pot' method to verify human activity. Lines 60-62 of <a href="https://github.com/jfspps/LearningChemDemo/blob/master/views/contact.ejs#L60">contact.ejs</a> are hidden tags which set 'humans' to non-null, allowing for the form to be submitted, starting from line 81 in <a href="https://github.com/jfspps/LearningChemDemo/blob/master/app.js#L81">app.js</a>. I was aware of other techniques (captcha's) but wanted to keep the website free of external scripts as much as possible. There are one or two suspect bot messages that get through though nothing excessive.
+          To reduce robot activity, I researched and adapted a so-called 'honey-pot' method to verify human activity. Lines 60-62 of <a href="https://github.com/jfspps/LearningChemDemo/blob/master/views/contact.ejs#L60" target="_blank">contact.ejs</a> are hidden tags which set 'humans' to non-null, allowing for the form to be submitted, starting from line 81 in <a href="https://github.com/jfspps/LearningChemDemo/blob/master/app.js#L81" target="_blank">app.js</a>. I was aware of other techniques (captcha's) but wanted to keep the website free of external scripts as much as possible. There are one or two suspect bot messages that get through though nothing excessive.
         </p>    
       </div>
       <div class="col-md-6">
@@ -132,7 +132,7 @@
       </div>
       <div class="col-md-5">
       <p>
-        Unavailable to readers of LearningChem is, of course, a way to read the feedback (shown opposite). I have two copies of LearningChem on the web server, one which is tasked solely at reviewing feedback. For demonstration purposes, this is reproduced in the <a href="https://github.com/jfspps/LearningChemDemo">LearningChemDemo</a> repository. To view, one must have MongoDB installed and then one use the relative URL '/readFeedback' at the landing page to view the feedback page. Instructions pertaining to login settings are included on the <a href="https://github.com/jfspps/LearningChemDemo">repository's front page</a>. I researched HTTPS certification and currently use Let's Encrypt to secure the feedback form on the live site.
+        Unavailable to readers of LearningChem is, of course, a way to read the feedback (shown opposite). I have two copies of LearningChem on the web server, one which is tasked solely at reviewing feedback. For demonstration purposes, this is reproduced in the <a href="https://github.com/jfspps/LearningChemDemo" target="_blank">LearningChemDemo</a> repository. To view, one must have MongoDB installed and then one use the relative URL '/readFeedback' at the landing page to view the feedback page. Instructions pertaining to login settings are included on the <a href="https://github.com/jfspps/LearningChemDemo" target="_blank">repository's front page</a>. I researched HTTPS certification and currently use Let's Encrypt to secure the feedback form on the live site.
       </p>
       </div>
 

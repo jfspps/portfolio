@@ -13,7 +13,7 @@
   </head>
   <body>
 
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color:rgb(224, 183, 147);">
     <div class="navbar-brand">Dr James Apps</div>
       
     <!-- collapsable button -->
@@ -45,16 +45,16 @@
           <a class="nav-link" href="mailto:japps@learningchem.co.uk"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="https://github.com/jfspps"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
+          <a class="nav-link" href="https://github.com/jfspps" target="_blank"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="https://www.linkedin.com/in/james-apps-b8422367"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+          <a class="nav-link" href="https://www.linkedin.com/in/james-apps-b8422367" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
         </li>
       </ul>
     </div>
   </nav>
 
-  <div class="jumbotron pb-1 bg-secondary text-white">
+  <div class="jumbotron pb-1 pt-6" style="background-color:rgb(233, 220, 200);">
     <div class="container">
       <h2>BodyBand</h2>
     </div>
@@ -66,7 +66,7 @@
         <h2>Motivation</h2>
         <h5>Summary last edited 19th Aug 2020</h5>
         <p>
-          I found that there were several mobile apps which record free-weight or machine settings but nothing for those who workout with resistance bands. I then set out to build my first Java app, which I would use, while gaining more experience with Java 11. I planned a rough <a href="https://github.com/jfspps/BodyBand/blob/master/docs/Project%20outline.docx">outline</a> of the project before proceeding to code.
+          I found that there were several mobile apps which record free-weight or machine settings but nothing for those who workout with resistance bands. I then set out to build my first Java app, which I would use, while gaining more experience with Java 11. I planned a rough <a href="https://github.com/jfspps/BodyBand/blob/master/docs/Project%20outline.docx" target="_blank">outline</a> of the project before proceeding to code.
         </p>
         <p>
           I have been learning how to write Java 11 from an online beginner's course and applied what I learned to this project. Initially, I framed the project as a mobile application. While it is arguable that I could have written the application in, for example, Kotlin, I wanted to test and showcase my learning in Java.
@@ -91,7 +91,7 @@
       <div class="col-md-12">
         <h2>With and without Gradle</h2>
             <p>
-              There are two repositories for BodyBand. The <a href="https://github.com/jfspps/BodyBand">first</a> gathered all external libraries manually (including JavaFX and SQLite) with some input via module_info.java. BodyBand was considered complete after about one month of development. Out of curiosity, I investigated how I could port BodyBand to Android. This was when I became aware of Gradle and Gluon JavaFX plugins. The <a href="https://github.com/jfspps/BodyBandGradle">second</a>, more representative repository contains the Gradle build of BodyBand. Unfortunately, I have been unable to compile the demo Gluon JavaFX apps with Gradle. With BodyBand already in a completed state I decided to postpone the Android port for now.
+              There are two repositories for BodyBand. The <a href="https://github.com/jfspps/BodyBand" target="_blank">first</a> gathered all external libraries manually (including JavaFX and SQLite) with some input via module_info.java. BodyBand was considered complete after about one month of development. Out of curiosity, I investigated how I could port BodyBand to Android. This was when I became aware of Gradle and Gluon JavaFX plugins. The <a href="https://github.com/jfspps/BodyBandGradle" target="_blank">second</a>, more representative repository contains the Gradle build of BodyBand. Unfortunately, I have been unable to compile the demo Gluon JavaFX apps with Gradle. With BodyBand already in a completed state I decided to postpone the Android port for now.
             </p>
         </div>
       </div>
@@ -102,19 +102,19 @@
             To put some context about BodyBand in place, a 'repetition' is one movement of weight or band. Normally, one would perform a number of repetitions (or 'reps') in a short time period and then rest before more exercises. Each group of repetitions is known as a 'set'.
           </p>
           <p>
-            Planning for greater independence between units, I built the model around three classes, <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbExercise.java">bbExercise</a>, <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbRepetition.java">bbRepetition</a> and <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbSet.java">bbSet</a>. Each class is essentially composed of String type properties and an Integer id. I learned that boxed types such as String and Integer can be null and I wanted to have the option available in the future. A GUI representation of the database fields available is shown opposite, in this case, for bbExercise. The id field can only be edited in SQLite. The user can edit database entries on this page but is expected to use a different, more informal page (shown later).
+            Planning for greater independence between units, I built the model around three classes, <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbExercise.java" target="_blank">bbExercise</a>, <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbRepetition.java" target="_blank">bbRepetition</a> and <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbSet.java" target="_blank">bbSet</a>. Each class is essentially composed of String type properties and an Integer id. I learned that boxed types such as String and Integer can be null and I wanted to have the option available in the future. A GUI representation of the database fields available is shown opposite, in this case, for bbExercise. The id field can only be edited in SQLite. The user can edit database entries on this page but is expected to use a different, more informal page (shown later).
           </p>
           <p>
-            As you can see from <a href="https://github.com/jfspps/BodyBand/commit/be0740d44add7076782300f43e0259eaea6887bb">this commit</a>, I decided to remove a redundant table, 'tblBandStat'. Consequently, this required a significant revision to BodyBand. This clearly highlighted to me the need to plan the model carefully since small changes to the underpinning model lead to much larger changes to the controller.
+            As you can see from <a href="https://github.com/jfspps/BodyBand/commit/be0740d44add7076782300f43e0259eaea6887bb" target="_blank">this commit</a>, I decided to remove a redundant table, 'tblBandStat'. Consequently, this required a significant revision to BodyBand. This clearly highlighted to me the need to plan the model carefully since small changes to the underpinning model lead to much larger changes to the controller.
           </p>
           <p>
-            The controller for BodyBand is represented by <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java">bbDatabase</a>. At the beginning of the class, I use private final Strings to set a few constant database field indices and then proceed to list the SQL queries as PreparedStatements. One important area which the course advised to look out for are SQL injection attacks, so implementing PreparedStatements which only recognise a limited set of data input was desired. Each PreparedStatement is associated with the SQL query string and then instantiated by open(). Resources are released with close(). Both open() and close() are executed in the <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/Main.java">main class</a>.
+            The controller for BodyBand is represented by <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java" target="_blank">bbDatabase</a>. At the beginning of the class, I use private final Strings to set a few constant database field indices and then proceed to list the SQL queries as PreparedStatements. One important area which the course advised to look out for are SQL injection attacks, so implementing PreparedStatements which only recognise a limited set of data input was desired. Each PreparedStatement is associated with the SQL query string and then instantiated by open(). Resources are released with close(). Both open() and close() are executed in the <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/Main.java" target="_blank">main class</a>.
           </p>
           <p>
-            The remaining bbDatabase methods process data from the model classes in preparation for the viewer. In hindsight, I would probably look into breaking up <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java">bbDatabase</a> such that it handles each model class individually (exercise, set and repetition). There are three major sections which facilitate CRUD type operations. Retrieval starts from <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L273">line 273</a> and insertion starts from <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L992">line 992</a>. Deletion methods start from <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L1269">line 1269</a>. The form of the CRUD style methods is largely the same, in which current values are sought for on the database and then created or updated as needed.
+            The remaining bbDatabase methods process data from the model classes in preparation for the viewer. In hindsight, I would probably look into breaking up <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java" target="_blank">bbDatabase</a> such that it handles each model class individually (exercise, set and repetition). There are three major sections which facilitate CRUD type operations. Retrieval starts from <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L273" target="_blank">line 273</a> and insertion starts from <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L992" target="_blank">line 992</a>. Deletion methods start from <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L1269" target="_blank">line 1269</a>. The form of the CRUD style methods is largely the same, in which current values are sought for on the database and then created or updated as needed.
           </p>
           <p>
-            A bootstrap class which initialises some data for demonstration purposes is provided by <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbSQLiteDB.java">bbSQLiteDB.java</a>.
+            A bootstrap class which initialises some data for demonstration purposes is provided by <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbSQLiteDB.java" target="_blank">bbSQLiteDB.java</a>.
           </p>
           
         </div>
@@ -141,7 +141,7 @@
             The repString "R_1_2_" is read left-to-right and means there was one repetition followed by two repetitions for a given exercise. It does not say what the tension was and could apply to any tension (or exercise or workout). The repString is stored in the database and mapped (one-to-many) to any set which applies to it. My personal experience shows that a lot of repetition patterns are reasonably constant, that is, users generally aim to workout within the same repetition sequence (the same repString) and change band tensions. This approach reduces the number of database records and more importantly, the number of queries made.
           </p>
           <p>
-            Parsing of the 'repString' is handled outside of the database, with <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L657">getRepListFromRepString()</a>, line 657, returning a List<>() of repetitions. Methods which validate repString are defined by <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L591">checkRepString()</a>, line 591 and methods which create a repString, <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L619">buildRepString()</a>, line 619, are handled independently. The effective removal of one or more of the numbers in the string is handled by <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L632">deleteRep()</a>, line 632. Individual values can be updated using <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L749">updateRepString()</a>, line 749. Normally, the user would not interact with repString directly and instead change values without knowing about repString.
+            Parsing of the 'repString' is handled outside of the database, with <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L657" target="_blank">getRepListFromRepString()</a>, line 657, returning a List<>() of repetitions. Methods which validate repString are defined by <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L591" target="_blank">checkRepString()</a>, line 591 and methods which create a repString, <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L619" target="_blank">buildRepString()</a>, line 619, are handled independently. The effective removal of one or more of the numbers in the string is handled by <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L632" target="_blank">deleteRep()</a>, line 632. Individual values can be updated using <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L749" target="_blank">updateRepString()</a>, line 749. Normally, the user would not interact with repString directly and instead change values without knowing about repString.
           </p>
         </div>
       </div>
@@ -150,7 +150,7 @@
         <div class="col-md-6">
           <h2>Unit testing</h2>
           <p>
-            BodyBand was also the first project where I learned about unit testing and at the time I focused on testing <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabaseTest2.java">bbDatabase</a>. There are still tests on other classes to be carried out before committing this project to production. All tests were carried out using JUnit 5, with some comparison of JUnit 4 (still apparently prevalent across the industry) covered in the course. At first I did not look forward to unit testing but very soon found it quite satisfying, showing each method working as planned. On a more serious note, the exercise clearly showed me the importance of testing, particularly when building custom methods, for example, for repString. The test results revealed problems with my code that needed addressing.
+            BodyBand was also the first project where I learned about unit testing and at the time I focused on testing <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabaseTest2.java" target="_blank">bbDatabase</a>. There are still tests on other classes to be carried out before committing this project to production. All tests were carried out using JUnit 5, with some comparison of JUnit 4 (still apparently prevalent across the industry) covered in the course. At first I did not look forward to unit testing but very soon found it quite satisfying, showing each method working as planned. On a more serious note, the exercise clearly showed me the importance of testing, particularly when building custom methods, for example, for repString. The test results revealed problems with my code that needed addressing.
           </p>
           <p>
             The course explained how to use the debugger, stepping into and out of methods after meeting breakpoints. What I found helpful was to return messages to the console with println(), usually after a database query and within try-catch blocks. These techniques, coupled with lots of forum searching, helped me resolve problems.
@@ -164,7 +164,7 @@
             The figure opposite is intended to function on a touch-screen device and as you can see hides all of the underlying logic from the user. Compare this to the figure above for 'bent-over rowing'. The update and delete buttons are enabled only if a record or database entry is selected. When writing FXML files, I usually combined SceneBuilder with manual FXML file writing. Getting used to FXML and Bootstrap CSS were closely related in my experience. 
           </p>
           <p>
-            One other major challenge I had to overcome was the rendering of different scenes. The course I followed only built applications with one scene. Related to the above, some of the literature does explain multiple scene handling but usually by approaching FXML controls via java classes, which is not what I wanted to follow. Overall, after careful choice of static variables, I eventually addressed the problem by sending new scenes to the same stage. I built a new Parent object to form the basis of a new scene and then passed the scene to the <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/Main.java#L14">static Stage mainWindow</a>, line 14. All of the different scenes are defined in a separate class, <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/sceneNavigation.java">sceneNavigation</a>.
+            One other major challenge I had to overcome was the rendering of different scenes. The course I followed only built applications with one scene. Related to the above, some of the literature does explain multiple scene handling but usually by approaching FXML controls via java classes, which is not what I wanted to follow. Overall, after careful choice of static variables, I eventually addressed the problem by sending new scenes to the same stage. I built a new Parent object to form the basis of a new scene and then passed the scene to the <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/Main.java#L14" target="_blank">static Stage mainWindow</a>, line 14. All of the different scenes are defined in a separate class, <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/sceneNavigation.java" target="_blank">sceneNavigation</a>.
           </p>
         </div>
         <div class="col-md-6">
@@ -184,7 +184,7 @@
         <div class="col-md-6">
           <h2>Concluding remarks and take-away lessons</h2>
           <p>
-            At this stage, BodyBand is in a functional state. I would think that all projects can receive improvements or more features and in the end what is implemented depends on the resources available. For instance, after further testing, BodyBand could be extended with more features (some are listed on the repository's <a href="https://github.com/jfspps/BodyBand">front page</a>). 
+            At this stage, BodyBand is in a functional state. I would think that all projects can receive improvements or more features and in the end what is implemented depends on the resources available. For instance, after further testing, BodyBand could be extended with more features (some are listed on the repository's <a href="https://github.com/jfspps/BodyBand" target="_blank">front page</a>). 
           </p>
           <p>
             The Gradle build also includes automated and verifiable testing with CircleCI, a tool I learned about when developing my Student Record Management suite.
