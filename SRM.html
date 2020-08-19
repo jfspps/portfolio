@@ -8,38 +8,50 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-      .body {
-        padding-top: 2.5rem;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="navbar-brand">Dr James Apps</div>
+        
+      <!-- collapsable button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+        
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Summaries</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="index.html">Front page</a>
+              <a class="dropdown-item" href="BodyBand.html">BodyBand</a>
+              <a class="dropdown-item" href="LearningChem.html">LearningChem</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">GitHub repositories</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="https://github.com/jfspps/BodyBandGradle">BodyBand</a>
+              <a class="dropdown-item" href="https://github.com/jfspps/SRM-Spring">Student record management SRM</a>
+              <a class="dropdown-item" href="https://github.com/jfspps/LearningChemDemo">LearningChem</a>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="index.html">Front page<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="mailto:japps@learningchem.co.uk"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="https://github.com/jfspps"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="https://www.linkedin.com/in/james-apps-b8422367"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
           </li>
         </ul>
       </div>
-      
-  <div class="collapse navbar-collapse">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="mailto:japps@learningchem.co.uk"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="https://github.com/jfspps"><i class="fa fa-github" aria-hidden="true"></i></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://www.linkedin.com/in/james-apps-b8422367"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-      </li>
-    </ul>
-  </div>
-</nav>
+    </nav>
 
   <div class="jumbotron pb-1 bg-secondary text-white">
     <div class="container">
@@ -49,67 +61,85 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-md-5">
-        <h2>Introduction and planning</h2>
-        <h5>Summary edited 18th Aug 2020</h5>
+      <div class="col-md-12">
+        <h2>Introduction and current status</h2>
+        <h5>Summary last edited 19th Aug 2020</h5>
         <p>
-          SRM is currently the project that I am still working on the most. At the moment, the application can temporarily store personal details (students, guardians, teachers and subjects) and retrieve them. For example, the teacher, student and guardian data can be summarised as shown opposite. I have left in a field 'some other variable' mostly as a placeholder to return application behaviour as SRM is developed. The next major components to implement are data persistence with MySQL (possibly with the assistance of Docker containers), user authentication and authorisation. Following this, I will then work towards CRUD operations needed to process student results. The relevant repository page is located <a href="https://github.com/jfspps/SRM-Spring">here</a>.
-        </p>
+          SRM is currently the project that I am still working on the most. At the moment, the application can temporarily store personal details (students, guardians, teachers and subjects) and retrieve them. For example, the teacher, student and guardian data can be summarised as shown opposite. I have left in a field 'some other variable' mostly as a placeholder to return application behaviour as SRM is developed. The next major components to implement are data persistence with MySQL (possibly with the assistance of Docker containers), user authentication and authorisation. Following this, I will then work towards CRUD operations needed to process student results.
+        </p>        
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+          <figure>
+            <img img alt="BodyBand" src="images/SRM_summary.png" class="mx-auto img-fluid d-block border" style="width: 100%">
+          </figure>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <h2>Technologies</h2>
+          <ul>
+            <li>Java 11</li>
+            <li>Project Lombok</li>
+            <li>MySQL 8</li>
+            <li>Spring MVC 4</li>
+            <li>Thymeleaf 3</li>
+            <li>JUnit 5</li>
+            <li>Mockito 3</li>
+            <li>Maven 3</li>
+            <li>CircleCI </li>
+            <li>IntelliJ 2020</li>
+          </ul>
+      </div>
+      <div class="col-md-8">
+        <h2>Planning</h2>
         <p>
           Following from my experience with BodyBand, I spent a few days planning the project before any coding, and outlined my ideas as a former-teacher, writing (amongst other documents) what I believe resembles a <a href="https://github.com/jfspps/SRM-Spring/tree/master/docs">Systems requirement specification</a>. As you will probably see from the documents, I previously referred to the project as 'Linq' but then changed it to SRM. I can certainly appreciate the advantages of planning and documenting clients' requirements, keeping teams of developers focused on different parts of the project at a time and thinking ahead about how each part responds with others.
         </p>
       </div>
+    </div>
+
+      <div class="row">
+        <div class="col-md-12">
+        <h2>MySQL database</h2>
+        <p>
+          I started work on the model database. At this stage I had finished an <a href="https://github.com/jfspps/MySQL-notes">online MySQL course</a> and was familiar enough with MySQL 8 and MySQL workbench to begin planning. I decided to build a small <a href="https://github.com/jfspps/SRM_Node">NodeJS and MySQL based parent's portal</a> for SRM which also contains a lot of the preliminary planning for this project. In the end it turned out to be a substantial project for me at least, trying to grapple with <a href="https://datatables.net/">Datatables</a>. Originally, I had planned to build the entire project with NodeJS instead of Spring but then decided to build on my Java skills and get some experience with Spring 5. This project presented here is the Spring based project. I will return the NodeJS project and consider integrating the parents' portal project with this Spring based project.
+        </p>
+        <figure>
+          <img img alt="BodyBand" src="images/SRM_schema.png" class="mx-auto img-fluid d-block" style="width: 100%">
+        </figure>
+        <p>
+          In <a href="BodyBand.html">BodyBand</a> there are three tables. From my <a href="https://github.com/jfspps/SRM-Spring/blob/master/dbschema/SRM_schema.pdf">planning of the NodeJS SRM project</a> (part of the original schema is reproduced above) and intention of moving to Spring 5, there would be about a dozen tables in SRM. My general application and understanding of database design mostly focuses on reducing the amount of repeated data, through normalisation. Generally, I have left out cascaded deletion for now since I am not sure how it might affect database behaviour later on. On working out the relationships between each table, I noticed that the type of relationship does not seem to affect the construction of the database, other than for many-to-many relationships which require an intermediate table to map foreign and primary keys. Choosing which fields to allow as NULL or not also required some thought and in the end I have had to make small adjustments to the database as the Spring project grows.
+        </p>
+        <p>
+          I soon came to learn about Spring Data JPA and realised that my database-first approach was probably going to change. Instead one would think in terms of POJOs and allow the database to be built based on the Spring annotations set.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5">
+        <h2>Project structure</h2>
+            <p>
+              The development of SRM is certainly more of a step-up compared to BodyBand. I am currently following a Spring 5 course and applying my learning to the development of SRM. Within the IntelliJ IDE I have used Spring Initializr to bring together dependencies, including Spring MVC 5, Project Lombok and Maven 3 to name a few. I have segregated packages and directories more often when building SRM. There are model and database service interfaces housed in a <a href="https://github.com/jfspps/SRM-Spring/tree/master/srm_spring_data">'data'</a> package, with the controllers and Thymeleaf templates in a <a href="https://github.com/jfspps/SRM-Spring/tree/master/srm_spring_web">'web'</a> package.
+            </p>
+            <h2>The model and controllers</h2>
+            <p>
+              Project Lombok has proved to be a large time saver and reduced the amount of code needed to build POJOs, though at the expense of learning yet more annotations! BodyBand utilises <a href="https://github.com/jfspps/BodyBandGradle/blob/master/src/main/java/com/BodyBand/model/bbDatabase.java#L260">one instance of bbDatabase</a>, a singleton. I then became aware of the Builder pattern which project Lombok provides. In the future, I intend on learning about the other design patterns available after finishing my Algorithms and Data Structures course.
+            </p>
+      </div>
       <div class="col-md-7">
         <figure>
-          <img img alt="BodyBand" src="images/SRM_summary.png" class="mx-auto img-fluid d-block" style="width: 100%">
+          <img img alt="BodyBand" src="images/SRM_editRecord.png" class="mx-auto img-fluid d-block border" style="width: 100%">
         </figure>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-12">
-        <h2>MySQL 8</h2>
-        <p>
-          I started work on the model database. At this stage I had finished an <a href="https://github.com/jfspps/MySQL-notes">online MySQL course</a> and was familiar enough with MySQL 8 and MySQL workbench to begin planning. I decided to build a small <a href="https://github.com/jfspps/SRM_Node">NodeJS and MySQL based parent's portal</a> for SRM which also contains a lot of the preliminary planning for this project. In the end it turned out to be a substantial project for me at least, trying to grapple with <a href="https://datatables.net/">Datatables</a>. Originally, I had planned to build the entire project with NodeJS instead of Spring but then decided to build on my Java skills and get some experience with Spring 5. This project presented here is the Spring based project. I will probably return the NodeJS project and consider integrating the parents' portal project with this Spring based project.
-        </p>
-        <figure>
-          <img img alt="BodyBand" src="images/SRM_schema.png" class="mx-auto img-fluid d-block" style="width: 100%">
-        </figure>
-        <p>
-          Database design seems to be a whole field in and of itself. In <a href="BodyBand.html">BodyBand</a> there are three tables. From my <a href="https://github.com/jfspps/SRM-Spring/blob/master/dbschema/SRM_schema.pdf">planning of the NodeJS SRM project</a> (part of the original schema is reproduced above) and intention of moving to Spring 5, there would be about a dozen tables in SRM. My general application and understanding of database design mostly focuses on reducing the amount of repeated data, through normalisation. Generally, I have left out cascaded deletion for now since I am not sure how it might affect database behaviour later on. On working out the relationships between each table, I noticed that the type of relationship does not seem to affect the construction of the database, other than for many-to-many relationships which require an intermediate table to map foreign and primary keys. Choosing which fields to allow as NULL or not also required some thought and in the end I have had to make small adjustments to the database as the Spring project grows.
-        </p>
-        <p>
-          I soon came to learn about Spring Data JPA and realised that my database-first approach was probably going to change. Instead one would think in terms of POJOs and allow the database to be built based on the Spring annotations set. Nevertheless, much of the database design which I had worked on would be applied when coding began.
-        </p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-5">
-        <h2>More technologies</h2>
-            <p>
-              The development of SRM is certainly more of a step-up compared to BodyBand. I am currently following a Spring 5 course and applying my learning to the development of SRM. Within the IntelliJ IDE I have used Spring Initializr to bring together dependencies, including Spring MVC 5, Project Lombok, Maven 3, Thymeleaf 3, JUnit 5, Mockito 3 and MySQL 8. I have segregated packages and directories more often when building SRM. There are model and database service interfaces housed in a <a href="https://github.com/jfspps/SRM-Spring/tree/master/srm_spring_data">'data'</a> package, with the controllers and Thymeleaf templates in a <a href="https://github.com/jfspps/SRM-Spring/tree/master/srm_spring_web">'web'</a> package.
-            </p>
-            <p>
-              Project Lombok has proved to be a large time saver and reduced the amount of code, though at the expense of learning yet more annotations! BodyBand utilises <a href="https://github.com/jfspps/BodyBandGradle/blob/master/src/main/java/com/BodyBand/model/bbDatabase.java#L260">one instance of bbDatabase</a>, a singleton. I then became aware of the Builder pattern which project Lombok provides. In the future, I intend on learning about the other design patterns available after finishing my Algorithms and Data Structures course.
-            </p>
-      </div>
-      <div class="col-md-7">
-        <figure>
-          <img img alt="BodyBand" src="images/SRM_editRecord.png" class="mx-auto img-fluid d-block" style="width: 100%">
-        </figure>
-      </div>
-    </div>
-
-    <div class="row">
-      
-      <div class="col-md-6">
-        <figure>
-          <img img alt="BodyBand" src="images/SRM_listView.png" class="mx-auto img-fluid d-block" style="width: 100%">
-        </figure>
-      </div>
-      <div class="col-md-6">
-        <h2>More on the current status</h2>
             <p>
               All of the create, read and update operations are implemented for students, guardians and teachers. There are two CRUD based services, one is based on a <a href="https://github.com/jfspps/SRM-Spring/tree/master/srm_spring_data/src/main/java/com/srm/services/map">HashMap<>()</a> (by default) while another is based on <a href="https://github.com/jfspps/SRM-Spring/tree/master/srm_spring_data/src/main/java/com/srm/services/springDataJPA">Spring Data JPA</a>. Both are extensions of interfaces located in <a href="https://github.com/jfspps/SRM-Spring/tree/master/srm_spring_data/src/main/java/com/srm/services/peopleServices">'people services'</a> and <a href="https://github.com/jfspps/SRM-Spring/tree/master/srm_spring_data/src/main/java/com/srm/services/academicServices">'academic services'</a>, and are called on depending on the selection given in the <a href="https://github.com/jfspps/SRM-Spring/blob/master/srm_spring_web/src/main/resources/application.yml">application YAML file</a>. As already mentioned, data is not persistent at the moment.
             </p>
@@ -120,10 +150,18 @@
     </div>
 
     <div class="row">
+      <div class="col-md-10">
+          <figure>
+            <img img alt="BodyBand" src="images/SRM_listView.png" class="mx-auto img-fluid d-block" style="width: 100%">
+          </figure>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="col-md-12">
-        <h2>Testing and validation</h2>
+        <h2>Testing and focusing commits</h2>
         <p>
-          More recently, I have begun implementing BindingResult handles to validate form posts. This will hopefully protect the database from unexpected NULL entries. The Spring course has also introduced me to the idea of TDD as well as Mockito. Writing tests before writing code took some getting used to and building fake data or mocks proved very useful when database records may not be available at the time.
+          More recently, I have begun implementing BindingResult handles to validate form posts. This will hopefully protect the database from unexpected NULL entries. The Spring course has also introduced me to the idea of TDD as well as Mockito 3. Writing tests before writing code took some getting used to and building fake data or mocks proved very useful when database records may not be available at the time.
         </p>
         <p>
           The course also explained the use of CircleCI to build and test projects. As a result, I nearly always run all 'data' and 'web' tests prior to committing to Git. I have set up CircleCI to build and test (and verify tests) for SRM and BodyBand. Perhaps more clearly, in contrast to BodyBand, is the need to work on <i>small, focused</i> commits. As I write code, quite often I will be thinking about how it relates to other parts of the application and then consider whether or not to add functionality elsewhere. However, it was easy to see how this makes troubleshooting more difficult. Before writing code, I set myself a small task and ignore all other tasks until the current task is finished and code is committed.
@@ -133,7 +171,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h2>Problem areas and conclusions</h2>
+        <h2>Other problem areas and conclusions</h2>
         <p>
           I decided to implement Java Set<>() instances for many properties so as to eliminate duplicate data records. Handling of Sets as Model instances between the controller and template is a particular trouble spot for me. Whenever I encounter problems, I usually insert breakpoints, step into and out of methods and read from the debug messages. I also insert SLF4j logs to confirm the status of the program at various points in the method (as opposed to using println() when debugging BodyBand). <a href="https://github.com/jfspps/SRM-Spring/blob/master/srm_spring_web/src/main/java/com/srm/controllers/StudentController.java#L245">One example</a> which I noticed and one which has been documented by a few online is the return of custom POJO Models as comma-separated Java Lists. I only noticed this after running log.info() calls and inspecting the output. I have implemented a hack to get it going for now and will revisit it later. There is another example <a href="https://github.com/jfspps/SRM-Spring/blob/master/srm_spring_web/src/main/java/com/srm/controllers/SubjectController.java#L128">here</a>. I have created a <a href="https://github.com/jfspps/SRM-Spring/issues/48">GitHub issue</a> which highlights it.
         </p>
@@ -141,7 +179,7 @@
           <a href="https://github.com/jfspps/SRM-Spring/blob/master/srm_spring_web/src/main/java/com/srm/controllers/RESTapiController.java#L42">Another issue</a> which I believe is resolved is the generation of apparently infinitely long JSONs. After much searching online, I eventually came across a solution by labelling 'many-to' entities with @JsonIgnore. Indeed, most of my time is spent reading from online resources, forums and the experience of others when building with new technologies. If it is particularly unique, then I will store the URL as a comment.
         </p>
         <p>
-          Above all, the development of SRM has added a significant number of technologies and techniques which while overwhelming at times, has given me exactly what I am looking for. The Spring technology does indeed look quite vast. Some of the design concepts needed a day or so to grasp. I am expecting more challenges as I continue working on SRM.
+          Above all, the development of SRM has added a significant number of technologies and techniques which while overwhelming at times, has given me what I am looking for. The Spring technology does indeed look quite vast and I am expecting more challenges to come as I continue working on SRM.
         </p>
       </div>
     </div>

@@ -8,38 +8,51 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-      .body {
-        padding-top: 2.5rem;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 
   </head>
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-      <div class="navbar-brand">Dr James Apps</div>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="index.html">Front page<span class="sr-only">(current)</span></a>
-          </li>
-        </ul>
-      </div>
+
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="navbar-brand">Dr James Apps</div>
       
-  <div class="collapse navbar-collapse">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="mailto:japps@learningchem.co.uk"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="https://github.com/jfspps"><i class="fa fa-github" aria-hidden="true"></i></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="https://www.linkedin.com/in/james-apps-b8422367"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-      </li>
-    </ul>
-  </div>
-</nav>
+    <!-- collapsable button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+      
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Summaries</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="index.html">Front page</a>
+            <a class="dropdown-item" href="SRM.html">Student record management SRM</a>
+            <a class="dropdown-item" href="LearningChem.html">LearningChem</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">GitHub repositories</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="https://github.com/jfspps/BodyBandGradle">BodyBand</a>
+            <a class="dropdown-item" href="https://github.com/jfspps/SRM-Spring">Student record management SRM</a>
+            <a class="dropdown-item" href="https://github.com/jfspps/LearningChemDemo">LearningChem</a>
+          </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="mailto:japps@learningchem.co.uk"><i class="fa fa-envelope" aria-hidden="true"></i> Email</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="https://github.com/jfspps"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="https://www.linkedin.com/in/james-apps-b8422367"><i class="fa fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
   <div class="jumbotron pb-1 bg-secondary text-white">
     <div class="container">
@@ -51,17 +64,22 @@
     <div class="row">
       <div class="col-md-6">
         <h2>Motivation</h2>
-        <h5>Summary edited 18th Aug 2020</h5>
+        <h5>Summary last edited 19th Aug 2020</h5>
         <p>
           I found that there were several mobile apps which record free-weight or machine settings but nothing for those who workout with resistance bands. I then set out to build my first Java app, which I would use, while gaining more experience with Java 11. I planned a rough <a href="https://github.com/jfspps/BodyBand/blob/master/docs/Project%20outline.docx">outline</a> of the project before proceeding to code.
         </p>
         <p>
-          I have been learning how to write Java 11 from an online beginner's course and applied what I learned to this project. Once the fundamental language concepts were covered, I thought it would prove efficient and more engaging if I build BodyBand alongside the course's exercises. Initially, I framed the project as a mobile application. While it is arguable that I could have written the application in, for example, Kotlin, I wanted to test and showcase my learning in Java.
+          I have been learning how to write Java 11 from an online beginner's course and applied what I learned to this project. Initially, I framed the project as a mobile application. While it is arguable that I could have written the application in, for example, Kotlin, I wanted to test and showcase my learning in Java.
         </p>
         <h2>Technologies</h2>
-        <p>
-          BodyBand was built with Java 11, the database handled with SQLite 3 (in line with potential mobile deployment) and the frontend driven by JavaFX 11. I started building Java applications in the Eclipse IDE but found problems with compiling projects with multiple JavaFX scenes. I then moved to IntelliJ, the same IDE used by the course, and have had none of the previous issues since. 
-        </p>
+          <ul>
+            <li>Java 11</li>
+            <li>SQLite 3</li>
+            <li>JavaFX 11</li>
+            <li>JUnit 5</li>
+            <li>Gradle 6</li>
+            <li>IntelliJ 2020</li>
+          </ul>
       </div>
       <div class="col-md-6">
         <figure>
@@ -73,16 +91,13 @@
       <div class="col-md-12">
         <h2>With and without Gradle</h2>
             <p>
-              There are two repositories for BodyBand. The <a href="https://github.com/jfspps/BodyBand">first</a> gathered all external libraries manually (including JavaFX and SQLite) with some input via module_info.java. BodyBand was considered complete after about one month of development. Out of curiosity, I investigated how I could port BodyBand to Android. This was when I became aware of Gradle and Gluon JavaFX plugins. The <a href="https://github.com/jfspps/BodyBandGradle">second</a> repository contains the Gradle build of BodyBand. Unfortunately, I have been unable to compile the demo Gluon JavaFX apps with Gradle. With BodyBand already in a completed state I decided to postpone the Android port for now.
+              There are two repositories for BodyBand. The <a href="https://github.com/jfspps/BodyBand">first</a> gathered all external libraries manually (including JavaFX and SQLite) with some input via module_info.java. BodyBand was considered complete after about one month of development. Out of curiosity, I investigated how I could port BodyBand to Android. This was when I became aware of Gradle and Gluon JavaFX plugins. The <a href="https://github.com/jfspps/BodyBandGradle">second</a>, more representative repository contains the Gradle build of BodyBand. Unfortunately, I have been unable to compile the demo Gluon JavaFX apps with Gradle. With BodyBand already in a completed state I decided to postpone the Android port for now.
             </p>
         </div>
       </div>
       <div class="row">
         <div class="col-md-6">
           <h2>Model and controller</h2>
-          <p>
-            What follows is a more detailed overview of the development of BodyBand, using the non-Gradle repository with more commit history as source material. Some of the code was initially written in the same java file but as the project grew, the code was segregated into independent java classes.
-          </p>
           <p>
             To put some context about BodyBand in place, a 'repetition' is one movement of weight or band. Normally, one would perform a number of repetitions (or 'reps') in a short time period and then rest before more exercises. Each group of repetitions is known as a 'set'.
           </p>
@@ -96,7 +111,7 @@
             The controller for BodyBand is represented by <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java">bbDatabase</a>. At the beginning of the class, I use private final Strings to set a few constant database field indices and then proceed to list the SQL queries as PreparedStatements. One important area which the course advised to look out for are SQL injection attacks, so implementing PreparedStatements which only recognise a limited set of data input was desired. Each PreparedStatement is associated with the SQL query string and then instantiated by open(). Resources are released with close(). Both open() and close() are executed in the <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/Main.java">main class</a>.
           </p>
           <p>
-            The remaining methods process data from the model classes in preparation for the viewer. In hindsight, I would probably look into breaking up <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java">bbDatabase</a> such that it handles each model class individually (exercise, set and repetition). There are three major sections which facilitate CRUD type operations. Retrieval starts from <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L273">line 273</a> and insertion starts from <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L992">line 992</a>. Deletion methods start from <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L1269">line 1269</a>. The form of the CRUD style methods is largely the same, in which current values are sought for on the database and then created or updated as needed.
+            The remaining bbDatabase methods process data from the model classes in preparation for the viewer. In hindsight, I would probably look into breaking up <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java">bbDatabase</a> such that it handles each model class individually (exercise, set and repetition). There are three major sections which facilitate CRUD type operations. Retrieval starts from <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L273">line 273</a> and insertion starts from <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L992">line 992</a>. Deletion methods start from <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java#L1269">line 1269</a>. The form of the CRUD style methods is largely the same, in which current values are sought for on the database and then created or updated as needed.
           </p>
           <p>
             A bootstrap class which initialises some data for demonstration purposes is provided by <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbSQLiteDB.java">bbSQLiteDB.java</a>.
@@ -178,7 +193,7 @@
             Most of the challenging areas were addressed or explained after I revisited the online course material, searched online forums as well as referred to my own copies of Herbert Schildt's 'Java: A Beginner's Guide' and 'Java: The Complete Reference'. 
           </p>
           <p>
-            I have been dabbling with programming since I was at school. The process of developing BodyBand has revealed a number of aspects of development which are new to me. Taking the time to plan the model is definitely worth the effort. I would rather not make changes to the model if possible. I can also no longer envisage writing sophisticated applications without thorough testing. Some of the CRUD based operations follow similar steps and so I would apply the same sequence across different SQL tables. Unwittingly though I would occasionally miss a step, as revealed by unit testing. Finding solutions or ideas to problems required a significant amount of forum searching. This coupled with ongoing changes to the technologies, with features steadily becoming deprecated and other new features being implemented added to the challenge of writing code. Some commits only involved a few lines of code but also required most of the day to research. This is a reality which I have come to accept. 
+            The process of developing BodyBand has revealed a number of aspects of development which are new to me. Taking the time to plan the model is definitely worth the effort. Some of the CRUD based operations follow similar steps and so I would apply the same sequence across different SQL tables. Unwittingly though I would occasionally miss a step, as revealed by unit testing. Finding solutions or ideas to problems required a significant amount of forum searching. This coupled with ongoing changes to the technologies added to the challenge of writing code. Some commits only involved a few lines of code but also required most of the day to research. This is a reality which I have come to accept. 
           </p>
         </div>
       </div>
