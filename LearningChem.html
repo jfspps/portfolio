@@ -63,9 +63,9 @@
     <div class="row">
       <div class="col-md-6">
         <h2>Motivation</h2>
-        <h5>Summary last edited 19th Aug 2020</h5>
+        <h5>Summary last edited 5th Sep 2020</h5>
         <p>
-          LearningChem is my effort to pass on what I have learned as an A-level and IBDP chemistry teacher. More relevant to software development, I felt it would be beneficial to learn the basics of web development even though I have no intention of becoming a front-end web developer. The GitHub repository for the demo version is <a href="https://github.com/jfspps/LearningChemDemo" target="_blank">here</a> and the live web application is found <a href="https://www.learningchem.co.uk" target="_blank">here</a>. LearningChem was developed before BodyBand and SRM.
+          LearningChem is my effort to pass on what I have learned as an A-level and IBDP chemistry teacher. More relevant to software development, I felt it would be beneficial to learn the basics of web development even though I have no intention of becoming a front-end web developer. The live web application is found <a href="https://www.learningchem.co.uk" target="_blank">here</a>.
         </p>
         <h2>Technologies</h2>
         <p>
@@ -112,7 +112,7 @@
       <div class="col-md-6">
         <h3>MongoDB</h3>
         <p>
-            To gauge how well received LearnChem is, I implemented a MongoDB 4 database to store user comments, questions and contact details. At this stage, I do not intend on vetting submitted comments for future publication. Instead, I respond to users on an individual basis, where appropriate. I did not know SQL at the time and decided to follow the course, utilising MongoDB. LearningChem connects to MongoDB via Mongoose 5. The schema is a collection of string types.
+            To gauge how well received LearnChem is, I implemented a MongoDB 4 database to store user comments, questions and contact details. At this stage, I do not intend on vetting submitted comments for future publication. Instead, I respond to users on an individual basis, where appropriate. I did not know SQL at the time and decided to follow the course, utilising MongoDB and  Mongoose 5.
         </p>
         <p>
           To reduce robot activity, I researched and adapted a so-called 'honey-pot' method to verify human activity. Lines 60-62 of <a href="https://github.com/jfspps/LearningChemDemo/blob/master/views/contact.ejs#L60" target="_blank">contact.ejs</a> are hidden tags which set 'humans' to non-null, allowing for the form to be submitted, starting from line 81 in <a href="https://github.com/jfspps/LearningChemDemo/blob/master/app.js#L81" target="_blank">app.js</a>. I was aware of other techniques (captcha's) but wanted to keep the website free of external scripts as much as possible. There are one or two suspect bot messages that get through though nothing excessive.
