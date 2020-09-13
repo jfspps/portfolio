@@ -63,10 +63,29 @@
     <div class="row">
       <div class="col-md-12">
         <h2>Introduction and current status</h2>
-        <h5>Summary last edited 5th Sep 2020</h5>
+        <h5>Summary last edited 13th Sep 2020</h5>
         <p>
-          SRM is currently the project that I am still working on the most. At the moment, the application can store personal details (students, guardians, teachers and subjects) and retrieve them from a MySQL 8 database, running from a Docker container. For example, the teacher, student and guardian data can be summarised as shown opposite. I have left in a field 'some other variable' mostly as a placeholder to return application behaviour as SRM is developed. The next major components to implement are user authentication and authorisation. A separate <a href="https://github.com/jfspps/Spring_weblogin" target="_blank">demo project</a> is being built as I learn Spring Security. Following this, I will then work towards CRUD operations needed to process student results.
+          SRM is currently the project that I am still working on the most. At the moment, the application can store personal details (students, guardians, teachers and subjects) and retrieve them from a MySQL 8 database, running from a Docker container. For example, the teacher, student and guardian data can be summarised as shown opposite. I have left in a field 'some other variable' mostly as a placeholder to return application behaviour as SRM is developed.
         </p>        
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h5>Web-login: authentication and authorisation</h5>
+        <p>
+          To facilitate the authentication and authorisation of users who request access to SRM, I have been building a separate, minimal Spring Security 5 project, Web-login. The GitHub repository for Web-login is <a href="https://github.com/jfspps/Spring_weblogin" target="_blank">here</a>. The list of key features include:
+        </p>        
+        <ul>
+          <li>BCrypt password encryption</li>
+          <li>Variable session length (currently <a href="https://github.com/jfspps/Spring_weblogin/blob/master/src/main/java/com/springsecurity/weblogin/config/SecurityConfiguration.java#L100" target="_blank">1 hour</a>)</li>
+          <li>MySQL persistent user accounts and Remember-Me tokens</li>
+          <li>Granular permissions (please see <a href="https://github.com/jfspps/Spring_weblogin/blob/master/src/main/java/com/springsecurity/weblogin/bootstrap/security/DataLoader_SDjpa.java#L64" target="_blank">BootLoader</a>)</li>
+          <li>Bootstrap (CSS) and Thymeleaf front-end</li>
+          <li>Example database entity (known as <a href="https://github.com/jfspps/Spring_weblogin/blob/master/src/main/java/com/springsecurity/weblogin/model/TestRecord.java" target="_blank">TestRecord</a>) to demonstrate authorised CRUD operations</li>
+          <li>Automatic account lock-out after repeated failed login attempts via <a href="https://github.com/jfspps/Spring_weblogin/tree/master/src/main/java/com/springsecurity/weblogin/listeners" target="_blank">listener classes</a></li>
+        </ul>
+        <p>Web-login will be integrated with SRM in due course.</p>
       </div>
     </div>
 
