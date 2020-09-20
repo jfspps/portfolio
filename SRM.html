@@ -205,13 +205,16 @@
       <div class="col-md-12">
         <h4>Other problem areas and conclusions</h4>
         <p>
-          I decided to implement Java Set<>() instances for many properties so as to eliminate duplicate data records. Handling of Sets as Model instances between the controller and template is a particular trouble spot for me. Whenever I encounter problems, I usually insert breakpoints, step into and out of methods and read from the debug messages. I also inserted SLF4j logs to confirm the status of the program at various points in the method (as opposed to using println() when debugging BodyBand). <a href="https://github.com/jfspps/SRM-Spring/blob/master/srm_spring_web/src/main/java/com/srm/controllers/StudentController.java#L245" target="_blank">One example</a> which I noticed and one which has been documented by a few online is the return of custom POJO Models as comma-separated Java Lists. I only noticed this after running log.info() calls and inspecting the output. I have implemented a hack to get it going for now and will revisit it later. There is another example <a href="https://github.com/jfspps/SRM-Spring/blob/master/srm_spring_web/src/main/java/com/srm/controllers/SubjectController.java#L128" target="_blank">here</a>. As a result, I have created a <a href="https://github.com/jfspps/SRM-Spring/issues/48" target="_blank">GitHub issue</a>.
+          I decided to implement Java Set<>() instances for many properties so as to eliminate duplicate data records. Handling of Sets as Model instances between the controller and template is a particular trouble spot for me. Whenever I encounter problems, I usually insert breakpoints, step into and out of methods and read from the debug messages. I also inserted SLF4j logs to confirm the status of the program at various points in the method (as opposed to using println() when debugging BodyBand).
         </p>
         <p>
-          Most of my time is spent reading from online resources, forums and the experience of others when building with new technologies. If it is particularly unique, then I will store the URL as a comment.
+          <a href="https://github.com/jfspps/SRM-Spring/blob/master/srm_spring_web/src/main/java/com/srm/controllers/StudentController.java#L245" target="_blank">One example</a> which I noticed and one which has been documented by a few online is the return of a comma-separated list of Strings. That is, a POJO (single) String property is behaving like a list of Strings. I only noticed this after running log.info() calls and inspecting the output. I then implemented a hack, splitting the list into individual Strings.
         </p>
         <p>
-          Above all, the development of SRM has added a significant number of technologies and techniques to learn, which while overwhelming at times, has given me what I am looking for. The Spring technology does indeed look quite vast and I am expecting more challenges to come as I continue working on SRM.
+          There is another example <a href="https://github.com/jfspps/SRM-Spring/blob/master/srm_spring_web/src/main/java/com/srm/controllers/SubjectController.java#L128" target="_blank">here</a>. As a result, I created a <a href="https://github.com/jfspps/SRM-Spring/issues/48" target="_blank">GitHub issue</a>. These issues are not applicable to Secure-SRM since the implementation and handling of POJOs has been revised.
+        </p>
+        <p>
+          Most of my time is spent reading from online resources, forums and the experience of others when building with new technologies. If it is particularly unique, then I will store the URL as a comment. Above all, the development of SRM has added a significant number of technologies and techniques to learn, which while overwhelming at times, has given me what I am looking for. The Spring technology does indeed look quite vast and I am expecting more challenges to come as I continue working on SRM.
         </p>
       </div>
     </div>
