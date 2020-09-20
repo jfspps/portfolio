@@ -35,7 +35,8 @@
           <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">GitHub repositories</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="https://github.com/jfspps/BodyBandGradle" target="_blank">BodyBand</a>
-            <a class="dropdown-item" href="https://github.com/jfspps/SRM-Spring" target="_blank">Student record management SRM</a>
+            <a class="dropdown-item" href="https://github.com/jfspps/SRM-Spring" target="_blank">Student record management (non-secure) SRM</a>
+            <a class="dropdown-item" href="https://github.com/jfspps/Secure-SRM" target="_blank">Student record management (Secure-SRM)</a>
             <a class="dropdown-item" href="https://github.com/jfspps/LearningChemDemo" target="_blank">LearningChem</a>
           </div>
         </li>
@@ -63,8 +64,13 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
+        <figure>
+          <img img alt="BodyBand" src="images/BodyBand_exerciseList.png" class="mx-auto img-fluid d-block" style="width: 60%">
+        </figure>
+      </div>
+      <div class="col-md-6">
         <h2>Motivation</h2>
-        <h5>Summary last edited 5th Sep 2020</h5>
+        <h5>Summary last edited 20th Sep 2020</h5>
         <p>
           I found that there were several mobile apps which record free-weight or machine settings but nothing for those who workout with resistance bands. I then set out to build my first Java app, which I would use, while gaining more experience with Java 11. I planned a rough <a href="https://github.com/jfspps/BodyBand/blob/master/docs/Project%20outline.docx" target="_blank">outline</a> of the project before proceeding to code.
         </p>
@@ -81,20 +87,7 @@
             <li>IntelliJ 2020</li>
           </ul>
       </div>
-      <div class="col-md-6">
-        <figure>
-          <img img alt="BodyBand" src="images/BodyBand_exerciseList.png" class="mx-auto img-fluid d-block" style="width: 70%">
-        </figure>
-      </div>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        <h2>With and without Gradle</h2>
-            <p>
-              There are two repositories for BodyBand. The <a href="https://github.com/jfspps/BodyBand" target="_blank">first</a> gathered all external libraries manually (including JavaFX and SQLite) with some input via module_info.java. BodyBand was considered complete after about one month of development. Out of curiosity, I investigated how I could port BodyBand to Android. This was when I became aware of Gradle and Gluon JavaFX plugins. The <a href="https://github.com/jfspps/BodyBandGradle" target="_blank">second</a>, more representative repository contains the Gradle build of BodyBand. Unfortunately, I have been unable to compile the demo Gluon JavaFX apps with Gradle. With BodyBand already in a completed state I decided to postpone the Android port for now.
-            </p>
-        </div>
-      </div>
       <div class="row">
         <div class="col-md-6">
           <h2>Model and controller</h2>
@@ -103,9 +96,6 @@
           </p>
           <p>
             Planning for greater independence between units, I built the model around three classes, <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbExercise.java" target="_blank">bbExercise</a>, <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbRepetition.java" target="_blank">bbRepetition</a> and <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbSet.java" target="_blank">bbSet</a>. A GUI representation of the database fields available is shown opposite, in this case, for bbExercise. The id field can only be edited in SQLite. The user can edit database entries on this page but is expected to use a different, more informal page (shown later).
-          </p>
-          <p>
-            As you can see from <a href="https://github.com/jfspps/BodyBand/commit/be0740d44add7076782300f43e0259eaea6887bb" target="_blank">this commit</a>, I decided to remove a redundant table, 'tblBandStat'. Consequently, this required a significant revision to BodyBand. This clearly highlighted to me the need to plan the model more carefully.
           </p>
           <p>
             The controller for BodyBand is represented by <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java" target="_blank">bbDatabase</a>. At the beginning of the class, I use private final Strings to set a few constant database field indices and then proceed to list the SQL queries as PreparedStatements. One important area which the course advised to look out for are SQL injection attacks, so implementing PreparedStatements which only recognise a limited set of data input was desired. Each PreparedStatement is associated with the SQL query string and then instantiated by open(). Resources are released with close(), both of which are defined in the <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/Main.java" target="_blank">main class</a>.
@@ -120,7 +110,7 @@
         </div>
         <div class="col-md-6">
           <figure>
-            <img img alt="BodyBand" src="images/BodyBand_editEx.png" class="mx-auto img-fluid d-block" style="width: 90%">
+            <img img alt="BodyBand" src="images/BodyBand_editEx.png" class="mx-auto img-fluid d-block" style="width: 80%">
           </figure>
         </div>
       </div>
@@ -150,10 +140,10 @@
         <div class="col-md-6">
           <h2>Unit testing</h2>
           <p>
-            BodyBand was also the first project where I learned about unit testing and at the time I focused on testing <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabaseTest2.java" target="_blank">bbDatabase</a>. There are still tests on other classes to be carried out before committing this project to production. All tests were carried out using JUnit 5, with some comparison of JUnit 4. The test results revealed problems with my code that needed addressing.
+            BodyBand was also the first project where I learned about unit testing and at the time I focused on testing <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabaseTest2.java" target="_blank">bbDatabase</a>. The test results revealed problems with my code that I eventually addressed.
           </p>
           <p>
-            The course explained how to use the debugger, stepping into and out of methods after meeting breakpoints. What I found helpful was to return messages to the console with println(), usually after a database query and within try-catch blocks. These techniques, coupled with lots of forum searching, helped me resolve problems.
+            What I found helpful was to return messages to the console with println(), usually after a database query and within try-catch blocks. These techniques, coupled with lots of forum searching, helped me resolve problems.
           </p>
           
           <h2>The FXML viewer</h2>
@@ -164,12 +154,12 @@
             The figure opposite is intended to function on a touch-screen device and as you can see hides all of the underlying logic from the user. Compare this to the figure above for 'bent-over rowing'. The update and delete buttons are enabled only if a record or database entry is selected. When writing FXML files, I usually combined SceneBuilder with manual FXML file writing.
           </p>
           <p>
-            One other major challenge I had to overcome was the rendering of different scenes. The course I followed only built applications with one scene. Related to the above, some of the literature does explain multiple scene handling but usually by approaching FXML controls via java classes, which is not what I wanted to follow. Overall, after careful choice of static variables, I eventually addressed the problem by sending new scenes to the same stage. I built a new Parent object to form the basis of a new scene and then passed the scene to the <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/Main.java#L14" target="_blank">static Stage mainWindow</a>, line 14. All of the different scenes are defined in a separate class, <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/sceneNavigation.java" target="_blank">sceneNavigation</a>.
+            One other major challenge I had to overcome was the rendering of different scenes. The online course I followed only built applications with one scene. Related to the above, some of the literature does explain multiple scene handling but usually by approaching FXML controls via java classes, which is not what I wanted to follow. Overall, after careful choice of static variables, I eventually overcame the problem by sending new scenes to the same stage, as shown <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/Main.java#L14" target="_blank">here</a>. All of the different scenes are defined in a separate class, <a href="https://github.com/jfspps/BodyBand/blob/master/src/sample/sceneNavigation.java" target="_blank">sceneNavigation</a>.
           </p>
         </div>
         <div class="col-md-6">
           <figure>
-            <img img alt="BodyBand" src="images/BodyBand_newSet1.png" class="mx-auto img-fluid d-block" style="width: 90%">
+            <img img alt="BodyBand" src="images/BodyBand_newSet1.png" class="mx-auto img-fluid d-block" style="width: 80%">
           </figure>
         </div>
       </div>
@@ -177,7 +167,7 @@
       <div class="row">
         <div class="col-md-6">
           <figure>
-            <img img alt="BodyBand" src="images/BodyBand_repHistory.png" class="mx-auto img-fluid d-block" style="width: 70%">
+            <img img alt="BodyBand" src="images/BodyBand_repHistory.png" class="mx-auto img-fluid d-block" style="width: 60%">
           </figure>
         </div>
         
