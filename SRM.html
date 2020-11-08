@@ -64,42 +64,52 @@
     <div class="row">
       <div class="col-md-12">
         <h2>Overview and current status</h2>
-        <h5>Summary last edited 20th Sep 2020</h5>
+        <h5>Summary last edited 8th Nov 2020</h5>
         <p>
-          SRM is currently the project that I am still working on the most. SRM is an academic database. The main development stages in chronological order are:
+          SRM is an academic database which can record student results and provide school staff with basic contact details for all personnel (teachers and guardians) who are related to each student. After the user logs on to the system, they are greeted with a welcome screen:
         </p>
-        <ol>
-          <li>Non-secure version, <b>SRM</b>. Currently this projects allows one to store personal details (students, guardians, teachers and subjects) and retrieve them from a MySQL 8 database, running from a Docker container. An example is shown in the figure below.</li>
-          <li><b>Web-login</b>: Spring security based front-end.</li>
-          <li><b>Secure-SRM</b>: secure version of SRM, which integrates SRM with Web-login.</li>
-        </ol>
-        <p>What follows is a brief description of Web-login followed by a summary of the original SRM project. Much of what is described in this summary also applies to the integrated project, Secure-SRM.</p>       
+        <div class="col-md-12">
+          <figure>
+            <img img alt="BodyBand" src="images/SRM_Welcome1.png" class="mx-auto img-fluid d-block" style="width: 80%">
+          </figure>
+      </div>
+        <p>Historically, Web-login is a separate Spring Security login app which was then integrated with SRM to then lead to the project present here, Secure-SRM.</p>       
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-12">
         <h5>Web-login: authentication and authorisation</h5>
-        <p>
-          To facilitate the authentication and authorisation of users who request access to SRM, I have been building a separate, minimal Spring Security 5 project, Web-login. The GitHub repository for Web-login is <a href="https://github.com/jfspps/Spring_weblogin" target="_blank">here</a>. The list of key features include:
-        </p>        
-        <ul>
-          <li>BCrypt password encryption</li>
-          <li>Variable session length (currently <a href="https://github.com/jfspps/Spring_weblogin/blob/master/src/main/java/com/springsecurity/weblogin/config/SecurityConfiguration.java#L100" target="_blank">1 hour</a>)</li>
-          <li>MySQL persistent user accounts and Remember-Me tokens</li>
-          <li>Granular permissions (please see <a href="https://github.com/jfspps/Spring_weblogin/blob/master/src/main/java/com/springsecurity/weblogin/bootstrap/security/DataLoader_SDjpa.java#L64" target="_blank">BootLoader</a>)</li>
-          <li>Bootstrap (CSS) and Thymeleaf front-end</li>
-          <li>Example database entity (known as <a href="https://github.com/jfspps/Spring_weblogin/blob/master/src/main/java/com/springsecurity/weblogin/model/TestRecord.java" target="_blank">TestRecord</a>) to demonstrate authorised CRUD operations</li>
-          <li>Automatic account lock-out after repeated failed login attempts via <a href="https://github.com/jfspps/Spring_weblogin/tree/master/src/main/java/com/springsecurity/weblogin/listeners" target="_blank">listener classes</a></li>
-        </ul>
-        <p>I am currently integrating Web-login with SRM and committing changes to a GitHub repository <a href="https://github.com/jfspps/Secure-SRM" target="_blank">Secure-SRM</a>.</p>
+        <div class="row">
+          <div class="col-md-6">
+            <p>
+              The GitHub repository for Web-login is <a href="https://github.com/jfspps/Spring_weblogin" target="_blank">here</a>. The list of key features include:
+            </p>        
+            <ul>
+              <li>BCrypt password encryption</li>
+              <li>Variable session length (currently <a href="https://github.com/jfspps/Spring_weblogin/blob/master/src/main/java/com/springsecurity/weblogin/config/SecurityConfiguration.java#L100" target="_blank">1 hour</a>)</li>
+              <li>MySQL persistent user accounts and Remember-Me tokens</li>
+              <li>Granular permissions (please see <a href="https://github.com/jfspps/Spring_weblogin/blob/master/src/main/java/com/springsecurity/weblogin/bootstrap/security/DataLoader_SDjpa.java#L64" target="_blank">BootLoader</a>)</li>
+              <li>Bootstrap (CSS) and Thymeleaf front-end</li>
+              <li>Example database entity (known as <a href="https://github.com/jfspps/Spring_weblogin/blob/master/src/main/java/com/springsecurity/weblogin/model/TestRecord.java" target="_blank">TestRecord</a>) to demonstrate authorised CRUD operations</li>
+              <li>Automatic account lock-out after repeated failed login attempts via <a href="https://github.com/jfspps/Spring_weblogin/tree/master/src/main/java/com/springsecurity/weblogin/listeners" target="_blank">listener classes</a></li>
+            </ul>
+            <p>The finalised <a href="https://github.com/jfspps/Secure-SRM" target="_blank">Secure-SRM</a> repository is available on GitHub.</p>
+          </div>
+
+          <div class="col-md-6">
+              <figure>
+                <img img alt="BodyBand" src="images/SRM_login.png" class="mx-auto img-fluid d-block" style="width: 100%">
+              </figure>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-12">
           <figure>
-            <img img alt="BodyBand" src="images/SRM_summary.png" class="mx-auto img-fluid d-block border" style="width: 100%">
+            <img img alt="BodyBand" src="images/SRM_summary.png" class="mx-auto img-fluid d-block border" style="width: 80%">
           </figure>
       </div>
     </div>
@@ -111,24 +121,10 @@
       </div>
 
     <div class="row">
-      <div class="col-md-4">
-        <h4>Technologies</h4>
-          <ul>
-            <li>Java 11</li>
-            <li>Project Lombok</li>
-            <li>MySQL 8</li>
-            <li>Spring MVC 4</li>
-            <li>Thymeleaf 3</li>
-            <li>JUnit 5</li>
-            <li>Mockito 3</li>
-            <li>Maven 3</li>
-            <li>CircleCI </li>
-          </ul>
-      </div>
-      <div class="col-md-8">
+      <div class="col-md-12">
         <h4>Planning</h4>
         <p>
-          Following from my experience with BodyBand, I spent a few days planning the project before any coding, and outlined my ideas as a former-teacher, writing (amongst other documents) what I believe resembles a <a href="https://github.com/jfspps/SRM-Spring/tree/master/NodeJS_SRM_archive/docs" target="_blank">Systems requirement specification</a>. As you will see, I previously referred to the project as 'Linq' but then changed it to SRM.
+          Following from my experience with BodyBand, I spent a few days planning the project before any coding, and outlined my ideas as a former-teacher, writing a <a href="https://github.com/jfspps/Secure-SRM/tree/master/NodeJS_SRM_archive/docs" target="_blank">Systems requirement specification</a>. As you will see, I previously referred to the project as 'Linq' but then changed it to SRM.
         </p>
       </div>
     </div>
@@ -137,13 +133,13 @@
         <div class="col-md-12">
         <h4>MySQL database</h4>
         <p>
-          I started work on the model database. At this stage I had finished an <a href="https://github.com/jfspps/MySQL-notes" target="_blank">online MySQL course</a> and was familiar enough with MySQL 8 and MySQL workbench to begin planning. I decided to build a small <a href="https://github.com/jfspps/SRM_Node" target="_blank">NodeJS and MySQL based parent's portal</a> for SRM which also contains a lot of the preliminary planning for this project. In the end it turned out to be a substantial project for me at least, trying to grapple with <a href="https://datatables.net/" target="_blank">Datatables</a>. Originally, I had planned to build the entire project with NodeJS instead of Spring but then decided to build on my Java skills and get some experience with Spring 5. This project presented in this summary is the Spring based project.
+          At this stage I had just finished an <a href="https://github.com/jfspps/MySQL-notes" target="_blank">online MySQL course</a> and was familiar enough with MySQL 8 and MySQL workbench to begin planning. I decided to build a small <a href="https://github.com/jfspps/SRM_Node" target="_blank">NodeJS and MySQL based parent's portal</a> for SRM which also contains a lot of the preliminary planning for this project. In the end it turned out to be a substantial project for me at least, trying to grapple with <a href="https://datatables.net/" target="_blank">Datatables</a>. Originally, I had planned to build the entire project with NodeJS instead of Spring but then decided to build on my Java skills and get some experience with Spring 5. The project presented in this summary is the Spring based project.
         </p>
         <figure>
           <img img alt="BodyBand" src="images/SRM_schema.png" class="mx-auto img-fluid d-block" style="width: 100%">
         </figure>
         <p>
-          In BodyBand there are three tables. From my <a href="https://github.com/jfspps/SRM-Spring/blob/master/dbschema/SRM_schema.pdf" target="_blank">planning of the NodeJS SRM project</a> (part of the original schema is reproduced above) and intention of moving to Spring 5, there would be about a dozen tables in SRM.
+          In BodyBand there are three tables. From my <a href="https://github.com/jfspps/Secure-SRM/blob/master/NodeJS_SRM_archive/dbschema/SRM_schema.pdf" target="_blank">planning of the NodeJS SRM project</a> (part of the original schema is reproduced above) and intention of moving to Spring 5, there would be about a dozen tables in SRM.
         </p>
         <p>
           I soon came to learn about Spring Data JPA and realised that I would instead think in terms of POJOs and allow the database to be built based on the Spring @Entity annotations.
@@ -152,17 +148,13 @@
     </div>
 
     <div class="row">
-      <div class="col-md-5">
+      <div class="col-md-4">
         <h4>Project structure</h4>
             <p>
-              I am currently following a Spring 5 course and applying my learning to the development of SRM. Within the IntelliJ IDE I have used Spring Initializr to bring together dependencies, including Spring MVC 5, Project Lombok and Maven 3 to name a few. There are model and database service interfaces housed in a <a href="https://github.com/jfspps/SRM-Spring/tree/master/srm_spring_data" target="_blank">'data'</a> package, with the Spring MVC controllers and Thymeleaf templates in a <a href="https://github.com/jfspps/SRM-Spring/tree/master/srm_spring_web" target="_blank">'web'</a> package.
-            </p>
-            <h4>The model and controllers</h4>
-            <p>
-              Project Lombok has proved to be a large time saver and reduced the amount of code needed to build POJOs, though at the expense of learning yet more annotations! BodyBand utilises <a href="https://github.com/jfspps/BodyBandGradle/blob/master/src/main/java/com/BodyBand/model/bbDatabase.java#L260" target="_blank">one instance of bbDatabase</a>, a singleton. I then became aware of the Builder pattern which project Lombok provides. In the future, I intend on learning about the other design patterns available after finishing my Algorithms and Data Structures course.
+              There are model and database service interfaces housed in a <a href="https://github.com/jfspps/Secure-SRM/tree/master/src/main/java/com/secure_srm/model" target="_blank">'model'</a> package, with the Spring MVC controllers are located in a <a href="https://github.com/jfspps/Secure-SRM/tree/master/src/main/java/com/secure_srm/web/controllers" target="_blank">'controllers'</a> package, and Thymeleaf templates in a <a href="https://github.com/jfspps/Secure-SRM/tree/master/src/main/resources/templates" target="_blank">'template'</a> directory. Project Lombok has proved to be a large time saver and reduced the amount of code needed to build POJOs, though at the expense of learning yet more annotations! 
             </p>
       </div>
-      <div class="col-md-7">
+      <div class="col-md-8">
         <figure>
           <img img alt="BodyBand" src="images/SRM_editRecord.png" class="mx-auto img-fluid d-block border" style="width: 100%">
         </figure>
@@ -172,16 +164,16 @@
     <div class="row">
       <div class="col-md-12">
             <p>
-              All of the create, read and update operations are implemented for students, guardians and teachers. There are two CRUD based services, one is based on a <a href="https://github.com/jfspps/SRM-Spring/tree/master/srm_spring_data/src/main/java/com/srm/services/map" target="_blank">HashMap<>()</a> (by default) while another is based on <a href="https://github.com/jfspps/SRM-Spring/tree/master/srm_spring_data/src/main/java/com/srm/services/springDataJPA" target="_blank">Spring Data JPA</a>. Both are extensions of interfaces located in <a href="https://github.com/jfspps/SRM-Spring/tree/master/srm_spring_data/src/main/java/com/srm/services/peopleServices" target="_blank">'people services'</a> and <a href="https://github.com/jfspps/SRM-Spring/tree/master/srm_spring_data/src/main/java/com/srm/services/academicServices" target="_blank">'academic services'</a>, and are called on depending on the selection given in the <a href="https://github.com/jfspps/SRM-Spring/blob/master/srm_spring_web/src/main/resources/application.yml" target="_blank">application YAML file</a>.
+              All of the create, read and update operations are implemented for several entities, including students, guardians and teachers. The CRUD service is based on <a href="https://github.com/jfspps/Secure-SRM/tree/master/src/main/java/com/secure_srm/services/springDataJPA" target="_blank">Spring Data JPA</a>.
             </p>
             <p>
-              The more difficult aspects of the project for me are understanding how to send and receive Model instances between the <a href="https://github.com/jfspps/SRM-Spring/tree/master/srm_spring_web/src/main/java/com/srm/controllers" target="_blank">controllers</a> and the <a href="https://github.com/jfspps/SRM-Spring/tree/master/srm_spring_web/src/main/resources/templates" target="_blank">Thymeleaf templates</a>.  As much as possible, I try to handle all NULL related exceptions on the controller side and get the controller to send generic or error messages to the template. I found it helpful to run <a href="https://github.com/jfspps/SRM-Spring/tree/master/srm_spring_web/src/test/java/com/srm/controllers" target="_blank">MockMvc tests</a> and perform some sort of UI testing at the same time to help me monitor the properties of Model objects.
+              The more difficult aspects of the project for me are understanding how to send and receive Model instances between the <a href="https://github.com/jfspps/SRM-Spring/tree/master/srm_spring_web/src/main/java/com/srm/controllers" target="_blank">controllers</a> and the <a href="https://github.com/jfspps/Secure-SRM/tree/master/src/main/java/com/secure_srm/web/controllers" target="_blank">Thymeleaf templates</a>. Regular <a href="https://github.com/jfspps/Secure-SRM/tree/master/src/test/java/com/secure_srm/web/controllers" target="_blank">integration tests</a> and UI testing helped me monitor the handling of Model objects during development.
             </p>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-10">
+      <div class="col-md-12">
           <figure>
             <img img alt="BodyBand" src="images/SRM_listView.png" class="mx-auto img-fluid d-block" style="width: 100%">
           </figure>
@@ -192,11 +184,19 @@
       <div class="col-md-12">
         <h4>Testing methods and focusing commits</h4>
         <p>
-          More recently, I have begun implementing BindingResult handles to validate form posts and protect the database from unexpected NULL entries. The Spring course has also introduced me to the idea of TDD. Writing tests before writing code took some getting used to and building fake data or mocks proved very useful when trying to focus development time.
+          More recently, I have begun implementing BindingResult handles to validate form posts and protect the database from unexpected NULL entries. Following a TDD approach. writing tests before writing code took some getting used to but in the end proved very useful when trying to focus development time and maximise code coverage.
         </p>
         <p>
-          The course also explained the use of CircleCI to build and test projects. I nearly always run all 'data' and 'web' tests prior to committing to Git. I have also begun to appreciate the need to work on <i>small, focused</i> commits. Doing so helps ease troubleshooting. Before writing code, I set myself a small task and ignore all other tasks until the current task is finished and code is committed.
+          I learned how to use CircleCI to build and test projects. I nearly always run all 'data' and 'web' tests prior to committing to Git. I have also begun to appreciate the need to work on <i>small, focused</i> commits. Doing so helps ease troubleshooting. Before writing code, I set myself a small task and ignore all other tasks until the current task is finished and code is committed.
         </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+          <figure>
+            <img img alt="BodyBand" src="images/SRM_listView2.png" class="mx-auto img-fluid d-block" style="width: 100%">
+          </figure>
       </div>
     </div>
 
@@ -207,18 +207,10 @@
           I decided to implement Java Set<>() instances for many properties so as to eliminate duplicate data records. Handling of Sets as Model instances between the controller and template is a particular trouble spot for me. Whenever I encounter problems, I usually insert breakpoints, step into and out of methods and read from the debug messages. I also inserted SLF4j logs to confirm the status of the program at various points in the method (as opposed to using println() when debugging BodyBand).
         </p>
         <p>
-          <a href="https://github.com/jfspps/SRM-Spring/blob/master/srm_spring_web/src/main/java/com/srm/controllers/StudentController.java#L245" target="_blank">One example</a> which I noticed and one which has been documented by a few online is the return of a comma-separated list of Strings. That is, a POJO (single) String property is behaving like a list of Strings. I only noticed this after running log.info() calls and inspecting the output. I then implemented a hack, splitting the list into individual Strings.
-        </p>
-        <p>
-          There is another example <a href="https://github.com/jfspps/SRM-Spring/blob/master/srm_spring_web/src/main/java/com/srm/controllers/SubjectController.java#L128" target="_blank">here</a>. As a result, I created a <a href="https://github.com/jfspps/SRM-Spring/issues/48" target="_blank">GitHub issue</a>. These issues are not applicable to Secure-SRM since the implementation and handling of POJOs has been revised.
-        </p>
-        <p>
           Most of my time is spent reading from online resources, forums and the experience of others when building with new technologies. If it is particularly unique, then I will store the URL as a comment. Above all, the development of SRM has added a significant number of technologies and techniques to learn, which while overwhelming at times, has given me what I am looking for. The Spring technology does indeed look quite vast and I am expecting more challenges to come as I continue working on SRM.
         </p>
       </div>
     </div>
-
-    <hr>
   </div>
   
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
