@@ -65,7 +65,7 @@
 
   <div class="jumbotron pb-1 pt-6" style="background-color:rgb(47, 41, 73);">
     <div class="container">
-      <h2>Secure Student-Record-Management (Secure SRM)</h2>
+      <h2>Secure Student-Record-Management (Secure-SRM)</h2>
     </div>
   </div>
 
@@ -75,7 +75,7 @@
         <h2>Overview and current status</h2>
         <p>
           SRM is an academic database which can record student results and provide school staff with basic contact
-          details for all personnel (teachers and guardians) who are related to each student.
+          details for all personnel (teachers and guardians) who are related to each student. Secure-SRM is the Spring Security backed application.
         </p>
         <h3>Login details</h3>
         <p>
@@ -92,9 +92,8 @@
           Please remember to logout.
         </p>
         <p>
-          In general, Admin users are able to add, remove or update Teacher and Guardian accounts. Teacher users can
-          only edit
-          the results of their students and not of other teachers. Guardians can only view the results of their own
+          In general, Admin users are able to add, remove or update Teacher and Guardian accounts. Admin users cannot edit student results. 
+          Teacher users can only edit the results of their own students and not of other teachers. Guardians can only view the results of their own
           dependents.
         </p>
         <p>
@@ -115,7 +114,7 @@
         <h3>Web-login: authentication and authorisation</h3>
         <p>
           The Spring Security frontend is based on a separate project, <a
-            href="https://github.com/jfspps/Spring_weblogin" target="_blank">WebLogin</a>. The list of key features
+            href="https://github.com/jfspps/Spring_weblogin" target="_blank">Web-login</a>. Secure-SRM is a combination of SRM and Web-login. The list of key features
           include:
         </p>
         <ul>
@@ -130,13 +129,13 @@
           </ul>
           <li>Password encryption technologies e.g. BCrypt and Cross-Site Request Forgery (CSRF) protection</li>
           <li>Custom Spring annotations, with @interface, that handle routing authentication</li>
-          <li>User login/logout timestamps and 403 (forbidden) responses and other properties (lockout, expired,
+          <li>User login/logout timestamps and 403 (forbidden) responses and other user account properties (lockout, expired,
             modified)</li>
           <li>In-memory H2 and MySQL persistent user accounts and Remember-Me tokens</li>
 
           <li>Example database entity (known as <a
               href="https://github.com/jfspps/Spring_weblogin/blob/master/src/main/java/com/springsecurity/weblogin/model/TestRecord.java"
-              target="_blank">TestRecord</a>) to demonstrate authorised CRUD operations</li>
+              target="_blank">TestRecord</a>) to demonstrate authorised CRUD operations of Web-login</li>
           <li>Automatic account lock-out after repeated failed login attempts via <a
               href="https://github.com/jfspps/Spring_weblogin/tree/master/src/main/java/com/springsecurity/weblogin/listeners"
               target="_blank">listener classes</a></li>
@@ -175,7 +174,7 @@
           At this stage I had just finished an <a href="https://jfspps.github.io/MySQL-notes" target="_blank">online
             MySQL course</a> and was familiar enough with MySQL 8 and MySQL workbench to begin planning. I decided to
           build a <a href="https://github.com/jfspps/SRM_Node" target="_blank">NodeJS and MySQL based parent's
-            portal</a> for SRM which also contains a lot of the preliminary planning for this project. In the end it
+            portal</a> for SRM which also contains a lot of the preliminary planning for Secure-SRM. In the end it
           turned out to be a substantial project, trying to grapple with <a href="https://datatables.net/"
             target="_blank">Datatables</a>. Originally, I had planned to build the entire
           project with NodeJS instead of Spring but then decided to build on my Java skills and get some experience with
