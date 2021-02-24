@@ -66,14 +66,14 @@
 
   <div class="jumbotron pb-1 pt-6" style="background-color:rgb(47, 41, 73);">
     <div class="container">
-      <h2>BodyBand</h2>
+      <h1>BodyBand <a href="https://github.com/jfspps/BodyBandGradle" target="_blank"><i class="fa fa-github"></i></a></h1>
     </div>
   </div>
 
   <div class="container" style="background-color:rgb(59, 58, 68);">
     <div class="row">
       <div class="col-md-12">
-        <h2>Motivation</h2>
+        <h1>Motivation</h1>
         <p>
           I found that there were several mobile apps which record free-weight or machine settings but nothing for those
           who workout with resistance bands. I then set out to build my first Java app, which I would use, while gaining
@@ -88,7 +88,10 @@
         <p>
           To put some context about BodyBand in place, a 'repetition' is one movement of weight or band. Normally, one
           would perform a number of repetitions (or 'reps') in a short time period and then rest before more exercises.
-          Each group of repetitions is known as a 'set'.
+          Each group of repetitions is known as a 'set'. The predicted maximum weight for a given number of repetitions, abbreviated to xRM, 
+          where x = number of repetitions, is an standard statistic of performance. For example, 1RM is the maximum weight lifted for one 
+          repetition and is usually heavier than a 4RM or 8RM indicator. There are numerous formulae proposed to extrapolate xRM values from 
+          a given set.
         </p>
       </div>
     </div>
@@ -116,7 +119,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h2>Other project features and learning points</h2>
+        <h1>Other project features and learning points</h1>
         <ul>
           <li>
             Preparing for SQL injection attacks by applying PreparedStatements.
@@ -126,25 +129,29 @@
               href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbSQLiteDB.java"
               target="_blank">bbSQLiteDB.java</a>.
           </li>
+        </ul>
+
+        <h1>Future work</h1>
+        <ul>
           <li>
-            Future improvement: breaking up <a
+            Refactor and break up of <a
               href="https://github.com/jfspps/BodyBand/blob/master/src/sample/model/bbDatabase.java"
               target="_blank">bbDatabase</a> such that it handles each model class individually (exercise, set and
             repetition).
           </li>
           <li>
-            Future improvement: increasing test coverage.
+            Increase test coverage.
           </li>
           <li>
-            Addition of more features: some are listed on the repository's <a href="https://github.com/jfspps/BodyBand"
-              target="_blank">front page</a>
+            Port to Android
+          </li>
+          <li>
+            Goal setting
+          </li>
+          <li>
+            Volume and xRM trends
           </li>
         </ul>
-
-        <p>
-          In the future, I intend to improve and refactor the project with Android Studio and release the application
-          for free.
-        </p>
       </div>
     </div>
 

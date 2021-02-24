@@ -65,14 +65,14 @@
 
   <div class="jumbotron pb-1 pt-6" style="background-color:rgb(47, 41, 73);">
     <div class="container">
-      <h2>Secure Student-Record-Management (Secure-SRM)</h2>
+      <h1>Secure Student-Record-Management (Secure-SRM) <a href="https://github.com/jfspps/SRM-Spring" target="_blank"><i class="fa fa-github"></i></a></h1>
     </div>
   </div>
 
   <div class="container" style="background-color:rgb(59, 58, 68);">
     <div class="row">
       <div class="col-md-12">
-        <h2>Overview and current status</h2>
+        <h1>Overview and current status</h1>
         <p>
           SRM is an academic database which can record student results and provide school staff with basic contact
           details for all personnel (teachers and guardians) who are related to each student. Secure-SRM is the Spring Security backed application.
@@ -131,7 +131,7 @@
           <li>Custom Spring annotations, with @interface, that handle routing authentication</li>
           <li>User login/logout timestamps and 403 (forbidden) responses and other user account properties (lockout, expired,
             modified)</li>
-          <li>In-memory H2 and MySQL persistent user accounts and Remember-Me tokens</li>
+          <li>In-memory h1 and MySQL persistent user accounts and Remember-Me tokens</li>
 
           <li>Example database entity (known as <a
               href="https://github.com/jfspps/Spring_weblogin/blob/master/src/main/java/com/springsecurity/weblogin/model/TestRecord.java"
@@ -151,7 +151,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h2>Background to SRM</h2>
+        <h1>Background to SRM</h1>
       </div>
     </div>
 
@@ -189,6 +189,22 @@
             target="_blank">planning</a> was also carried out using MySQL workbench (part of the original schema is
           reproduced above).
         </p>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Future work</h1>
+
+        <ul>
+          <li>Completion of DELETE CRUD operations</li>
+          <li>Parents portal, built with an Angular frontend and retrieval of data via a REST endpoint</li>
+          <li>More streamlined data entry with an Angular frontend, uploading student results on a per-class basis</li>
+          <li>Student report generation</li>
+          <li>PDF and XLSX export</li>
+        </ul>
 
         <p>
           More technical details of the project structure and, <a

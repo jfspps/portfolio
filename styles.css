@@ -5,3 +5,12 @@ body {
 @media screen and (max-width: 576px) {
     body { padding-top: 30px; }
 }
+
+@font-face {
+    font-family: KalyantBold;
+    src: url(./fonts/KalyantDemoBold-PKZ4d.otf);
+  }
+
+h1, h2, h3, h4 {
+    font-family: 'KalyantBold';
+}
