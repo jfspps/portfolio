@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Dr James Apps</title>
+  <title>Dr James Apps | SRM</title>
 
   <!-- Bootstrap core CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -30,7 +30,7 @@
           <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">Summaries</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="CloudWrite.html">CloudWrite</a>
+            <a class="dropdown-item" href="index.html">Front page</a>
             <a class="dropdown-item" href="SRM.html">Secure student record
               management (Secure-SRM)</a>
             <a class="dropdown-item" href="BodyBand.html">BodyBand</a>
@@ -68,137 +68,164 @@
 
   <div class="jumbotron pb-1 pt-6" style="background-color:rgb(47, 41, 73);">
     <div class="container">
-      <h1>Software portfolio</h1>
-      <p>
-        I am teaching myself to write software and looking for opportunities to work as a professional Java developer. Additionally, I intend on applying my
-        teaching and technical background to the healthcare, manufacturing and R&D industries in the UK. Looking further 
-        ahead, I am also interested in gaining experience with other software technologies and languages.
-      </p>
+      <h1>CloudWrite <a href="https://github.com/jfspps/CloudWrite" target="_blank"><i class="fa fa-github"></i></a>
+      </h1>
     </div>
   </div>
 
-  <div class="container">
+  <div class="container" style="background-color:rgb(59, 58, 68);">
+
     <div class="row">
-      <div class="col-md-4">
-        <h2>CloudWrite <a href="https://github.com/jfspps/CloudWrite" target="_blank"><i class="fa fa-github"></i></a></h2>
-        
+      <div class="col-md-12">
+        <h2>Overview</h2>
         <p>
-          CloudWrite is a Spring based collaborative authoring tool for science writers. A RESTful web service to publish XML and JSON returns is available.
+          CloudWrite is an article planning/authoring tool designed particularly for science writers.
+          Multiple users can login and edit each article making CloudWrite a collaborative tool.
+          A REST API web service is offered and can publish either XML or JSON feeds. Many of the technologies
+          (e.g. H2 and MySQL databases, BCrypt, CSRF and timestamps) learned when building <a
+            href="SRM.html">Secure-SRM</a>
+          are also applied here.
         </p>
-        <h4>Technologies</h4>
         <p>
-          In addition to the Spring related technologies listed for Secure-SRM (below), CloudWrite makes use of:
+          A compiled JAR file is provided <a href="https://github.com/jfspps/CloudWrite/tree/main/JAR" target="_blank">here</a> for demonstration purposes.
         </p>
-        <ul>
-          <li>REST API documentation with OpenAPI</li>
-          <li>Java object to DTO mapping with MapStruct</li>
-          <li>JAXB2 XSD to Java class generation with XJC binding</li>
-        </ul>
-        <p><a class="btn btn-info" href="CloudWrite.html" role="button">View more details &raquo;</a></p>
-      </div>
-      <div class="col-md-8">
-        <figure>
-          <img img alt="SRM" src="images/CloudWrite_Front.png" class="mx-auto img-fluid d-block" style="width: 100%">
-        </figure>
       </div>
     </div>
 
-    <hr>
-
     <div class="row">
-      <div class="col-md-4">
-        <h2>Secure-SRM <a href="https://github.com/jfspps/Secure-SRM" target="_blank"><i class="fa fa-github"></i></a></h2>
-        
-        <p>
-          Secure Student-record-management (Secure-SRM) is an academic record database system and is my first venture with Spring development.
-        </p>
-        <h4>Technologies</h4>
-        <ul>
-          <li>Java 11</li>
-          <li>Project Lombok</li>
-          <li>MySQL 8</li>
-          <li>Spring MVC 4</li>
-          <li>Spring Security 5</li>
-          <li>Thymeleaf 3</li>
-          <li>JUnit 5</li>
-          <li>Mockito 3</li>
-          <li>Maven 3</li>
-          <li>CircleCI building and testing</li>
-        </ul>
-        <p><a class="btn btn-info" href="SRM.html" role="button">View more details &raquo;</a></p>
-      </div>
-      <div class="col-md-8">
-        <figure>
-          <img img alt="SRM" src="images/SRM_Welcome.png" class="mx-auto img-fluid d-block" style="width: 100%">
-        </figure>
+      <div class="col-md-12">
+        <h2>Motivation</h2>
       </div>
     </div>
 
-    <hr>
-
     <div class="row">
-      <div class="col-md-6">
-        <h2>BodyBand <a href="https://github.com/jfspps/BodyBandGradle" target="_blank"><i class="fa fa-github"></i></a></h2>
-        
+      <div class="col-md-12">
         <p>
-          BodyBand is my first Java project and is designed to enable users to record and analyse their workout
-          routines.
+          Currently, I am a freelance science writer and also maintain <a href="https://www.learningchem.co.uk" target="_blank">LearningChem</a>
+           where I publish articles for students and teachers. Following on from my experience of building <a href="SRM.html">Secure-SRM</a>, I decided to build an app which
+           would help me plan new articles. I also wanted to revisit Spring development and get some experience with building a REST API web service.
         </p>
-        <h4>Technologies</h4>
-        <ul>
-          <li>Java 11</li>
-          <li>SQLite 3</li>
-          <li>JavaFX 11</li>
-          <li>JUnit 5</li>
-          <li>Gradle 6</li>
-          <li>CircleCI building and testing</li>
-        </ul>
-        <p><a class="btn btn-info" href="BodyBand.html" role="button">View more details &raquo;</a></p>
-      </div>
-      <div class="col-md-4">
-        <figure>
-          <img img alt="BodyBand" src="images/BodyBand_newSet1.png" class="mx-auto img-fluid d-block"
-            style="width: 80%">
-        </figure>
       </div>
     </div>
 
-    <hr>
 
     <div class="row">
-      <div class="col-md-6">
-        <h2>LearningChem <a href="https://github.com/jfspps/LearningChemDemo" target="_blank"><i class="fa fa-github"></i></a></h2>
-
-        <p>LearningChem is my first NodeJS web application, hosted on DigitalOcean, intended to support students and teachers of pre-university Chemistry courses.</p>
-        <h4>Technologies</h4>
-        <ul>
-          <li>HTML, CSS, Javascript</li>
-          <li>Bootstrap</li>
-          <li>NodeJS</li>
-          <li>MongoDB</li>
-        </ul>
-        <p><a class="btn btn-info" href="https://learningchem.co.uk" target="_blank" role="button">View live page &raquo;</a></p>
+      <div class="col-md-12">
+        <h2>Landing page</h2>
+        <p>
+          Users authenticate their identity and are then granted equal read/write authorisation roles for all articles
+          on file.
+        </p>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-12">
         <figure>
-          <img img alt="SRM" src="images/LearningChem_frontpage.png" class="mx-auto img-fluid d-block"
+          <img img alt="CloudWrite Welcome screen" src="images/CloudWrite_Front.png" class="mx-auto img-fluid d-block"
             style="width: 100%">
         </figure>
       </div>
     </div>
 
-    <hr>
+    <hr />
 
     <div class="row">
       <div class="col-md-12">
-        <h2>HowTos <a href="https://jfspps.github.io/howtos/" target="_blank"><i class="fa fa-github"></i></a></h2>
-        <p>HowTos is my first Angular project intended to index many of the online-tutorial derived projects I followed and programming notes I gathered as I learn. The site provides links to GitHub hosted starting points (templates), many of which I referred to when building the above projects. Areas explored include Angular, MySQL, Python and Docker, along with algorithms in Java and C/C++ and design patterns with Java.</p>
+        <h2>Admin users</h2>
+        <p>
+          Admin users of CloudWrite are granted roles which permit them to manage user accounts. They can also edit
+          articles just as regular users do.
+        </p>
       </div>
     </div>
 
-    <hr>
+    <div class="row">
+      <div class="col-md-12">
+        <figure>
+          <img img alt="CloudWrite admin screen" src="images/CloudWrite_Admin.png" class="mx-auto img-fluid d-block"
+            style="width: 100%">
+        </figure>
+      </div>
+    </div>
 
-  </div>
+    <hr />
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>User admin page</h2>
+        <p>
+          Users can update their own password.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <figure>
+          <img img alt="CloudWrite admin screen" src="images/CloudWrite_EditUser.png" class="mx-auto img-fluid d-block"
+            style="width: 100%">
+        </figure>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Exposition and fundamental pieces</h2>
+        <p>
+          An exposition piece highlights an area of research. A fundamental piece is an article which explains key concepts.
+           The user pages for exposition (below) and fundamental pieces are similar.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <figure>
+          <img img alt="CloudWrite exposition piece" src="images/CloudWrite_Expo.png" class="mx-auto img-fluid d-block"
+            style="width: 100%">
+        </figure>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          Users can create new expositions (below) and fundamental pieces.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <figure>
+          <img img alt="CloudWrite new exposition piece" src="images/CloudWrite_NewExpo.png" class="mx-auto img-fluid d-block"
+            style="width: 100%">
+        </figure>
+      </div>
+    </div>
+
+    <hr />
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>REST API</h2>
+        <p>
+          The REST API web service is documented using OpenAPI (formerly Swagger). A shortcut to the OpenAPI documentation page is provided at the login page.
+          All users, authenticated or not, are permitted read-only access to all exposition and fundamental pieces. In addition, users can search by keyword to narrow down the returns.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <figure>
+          <img img alt="BodyBand" src="images/CloudWrite_OpenAPI.png" class="mx-auto img-fluid d-block border"
+            style="width: 100%">
+        </figure>
+      </div>
+    </div>
+
+  <hr />
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

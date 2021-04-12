@@ -31,6 +31,7 @@
             aria-haspopup="true" aria-expanded="false">Summaries</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="index.html">Front page</a>
+            <a class="dropdown-item" href="CloudWrite.html">CloudWrite</a>
             <a class="dropdown-item" href="BodyBand.html">BodyBand</a>
           </div>
         </li>
@@ -38,9 +39,10 @@
           <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">GitHub repositories</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="https://github.com/jfspps/BodyBandGradle" target="_blank">BodyBand</a>
+            <a class="dropdown-item" href="https://github.com/jfspps/CloudWrite" target="_blank">CloudWrite</a>
             <a class="dropdown-item" href="https://github.com/jfspps/Secure-SRM" target="_blank">Secure student record
               management (Secure-SRM)</a>
+            <a class="dropdown-item" href="https://github.com/jfspps/BodyBandGradle" target="_blank">BodyBand</a>
             <a class="dropdown-item" href="https://github.com/jfspps/LearningChemDemo" target="_blank">LearningChem</a>
             <a class="dropdown-item" href="https://jfspps.github.io/howtos/" target="_blank">HowTos</a>
           </div>
@@ -72,12 +74,35 @@
   <div class="container" style="background-color:rgb(59, 58, 68);">
     <div class="row">
       <div class="col-md-12">
-        <h1>Overview and current status</h1>
+        <h2>Overview</h2>
         <p>
           SRM is an academic database which can record student results and provide school staff with basic contact
           details for all personnel (teachers and guardians) who are related to each student. Secure-SRM is the Spring Security backed application.
         </p>
-        <h3>Login details</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Motivation</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          Following from my experience with BodyBand, I spent a few days planning the project before any coding, and
+          outlined my ideas as a former-teacher, writing a <a
+            href="https://github.com/jfspps/Secure-SRM/tree/master/NodeJS_SRM_archive/docs" target="_blank">Systems
+            requirement specification</a>. As you will see, I previously referred to the project as 'Linq' but then
+          changed it to SRM.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>AWS demonstration</h2>
         <p>
           The application is hosted on AWS BeanStalk (EC2 instances scheduled to run 0900-1700 UTC, Mon-Fri) <a
             href="http://securesrm-env.eba-wdbke2kz.eu-west-2.elasticbeanstalk.com/" target="_blank">here</a>. When
@@ -111,7 +136,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h3>Web-login: authentication and authorisation</h3>
+        <h2>Web-login: authentication and authorisation</h2>
         <p>
           The Spring Security frontend is based on a separate project, <a
             href="https://github.com/jfspps/Spring_weblogin" target="_blank">Web-login</a>. Secure-SRM is a combination of SRM and Web-login. The list of key features
@@ -151,25 +176,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h1>Background to SRM</h1>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <p>
-          Following from my experience with BodyBand, I spent a few days planning the project before any coding, and
-          outlined my ideas as a former-teacher, writing a <a
-            href="https://github.com/jfspps/Secure-SRM/tree/master/NodeJS_SRM_archive/docs" target="_blank">Systems
-            requirement specification</a>. As you will see, I previously referred to the project as 'Linq' but then
-          changed it to SRM.
-        </p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12">
-        <h4>MySQL database</h4>
+        <h2>MySQL database</h2>
         <p>
           At this stage I had just finished an <a href="https://jfspps.github.io/MySQL-notes" target="_blank">online
             MySQL course</a> and was familiar enough with MySQL 8 and MySQL workbench to begin planning. I decided to
@@ -196,7 +203,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h1>Future work</h1>
+        <h2>Future work</h2>
 
         <ul>
           <li>Parents portal, built with an Angular frontend and retrieval of data via a REST endpoint</li>
@@ -223,8 +230,6 @@
         </figure>
       </div>
     </div>
-
-    <hr />
 
     <div class="row">
       <div class="col-md-12">
