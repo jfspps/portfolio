@@ -68,7 +68,8 @@
 
   <div class="jumbotron pb-1 pt-6" style="background-color:rgb(47, 41, 73);">
     <div class="container">
-      <h1>Secure Student-Record-Management (Secure-SRM) <a href="https://github.com/jfspps/Secure-SRM" target="_blank"><i class="fa fa-github"></i></a></h1>
+      <h1>Secure Student-Record-Management (Secure-SRM) <a href="https://github.com/jfspps/Secure-SRM"
+          target="_blank"><i class="fa fa-github"></i></a></h1>
     </div>
   </div>
 
@@ -78,7 +79,8 @@
         <h2>Overview</h2>
         <p>
           SRM is an academic database which can record student results and provide school staff with basic contact
-          details for all personnel (teachers and guardians) who are related to each student. Secure-SRM is the Spring Security backed application.
+          details for all personnel (teachers and guardians) who are related to each student. Secure-SRM is the Spring
+          Security backed application.
         </p>
       </div>
     </div>
@@ -103,10 +105,14 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h2>AWS demonstration</h2>
+        <h2>AWS and Docker image demo</h2>
         <p>
           The application is hosted on AWS BeanStalk (EC2 instances scheduled to run 0900-1700 UTC, Mon-Fri) <a
-            href="http://securesrm-env.eba-wdbke2kz.eu-west-2.elasticbeanstalk.com/" target="_blank">here</a>. When
+            href="http://securesrm-env.eba-wdbke2kz.eu-west-2.elasticbeanstalk.com/" target="_blank">here</a>. A Docker
+          image is available <a href="https://hub.docker.com/r/jfspps/secure-srm" target="_blank">here</a>.
+        </p>
+        <p>
+          When
           attempting to login, use any of the three user types (each with different access levels):
         </p>
         <ol>
@@ -115,11 +121,13 @@
           <li>Guardian user username: "alexsmith", password: "alexsmith123"</li>
         </ol>
         <p>
-          Please remember to logout.
+          Please remember to logout from the AWS demo.
         </p>
         <p>
-          In general, Admin users are able to add, remove or update Teacher and Guardian accounts. Admin users cannot edit student results. 
-          Teacher users can only edit the results of their own students and not of other teachers. Guardians can only view the results of their own
+          In general, Admin users are able to add, remove or update Teacher and Guardian accounts. Admin users cannot
+          edit student results.
+          Teacher users can only edit the results of their own students and not of other teachers. Guardians can only
+          view the results of their own
           dependents.
         </p>
         <p>
@@ -140,14 +148,15 @@
         <h2>Web-login: authentication and authorisation</h2>
         <p>
           The Spring Security frontend is based on a separate project, <a
-            href="https://github.com/jfspps/Spring_weblogin" target="_blank">Web-login</a>. Secure-SRM is a combination of SRM and Web-login. The list of key features
+            href="https://github.com/jfspps/Spring_weblogin" target="_blank">Web-login</a>. Secure-SRM is a combination
+          of SRM and Web-login. The list of key features
           include:
         </p>
         <ul>
           <li>Bootstrap (CSS) and Thymeleaf front-end</li>
           <li>Granular permissions. Please see <a
-            href="https://github.com/jfspps/Spring_weblogin/blob/master/src/main/java/com/springsecurity/weblogin/bootstrap/security/DataLoader_SDjpa.java#L64"
-            target="_blank">BootLoader</a>:</li>
+              href="https://github.com/jfspps/Spring_weblogin/blob/master/src/main/java/com/springsecurity/weblogin/bootstrap/security/DataLoader_SDjpa.java#L64"
+              target="_blank">BootLoader</a>:</li>
           <ul>
             <li>Authority entity (a list of Users with the given authority) and Roles (ADMIN, USER, etc.)</li>
             <li>User entity, with a list of Authority's (a user may belong to more than one Authority)</li>
@@ -155,7 +164,8 @@
           </ul>
           <li>Password encryption technologies e.g. BCrypt and Cross-Site Request Forgery (CSRF) protection</li>
           <li>Custom Spring annotations, with @interface, that handle routing authentication</li>
-          <li>User login/logout timestamps and 403 (forbidden) responses and other user account properties (lockout, expired,
+          <li>User login/logout timestamps and 403 (forbidden) responses and other user account properties (lockout,
+            expired,
             modified)</li>
           <li>In-memory H2 and MySQL persistent user accounts and Remember-Me tokens</li>
 
