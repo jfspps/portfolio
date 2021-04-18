@@ -41,6 +41,7 @@
             aria-haspopup="true" aria-expanded="false">GitHub repositories</a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="https://github.com/jfspps/CloudWrite" target="_blank">CloudWrite</a>
+            <a class="dropdown-item" href="https://github.com/jfspps/CloudRead" target="_blank">CloudRead</a>
             <a class="dropdown-item" href="https://github.com/jfspps/Secure-SRM" target="_blank">Secure student record
               management (Secure-SRM)</a>
             <a class="dropdown-item" href="https://github.com/jfspps/BodyBandGradle" target="_blank">BodyBand</a>
@@ -69,6 +70,7 @@
   <div class="jumbotron pb-1 pt-6" style="background-color:rgb(47, 41, 73);">
     <div class="container">
       <h1>CloudWrite <a href="https://github.com/jfspps/CloudWrite" target="_blank"><i class="fa fa-github"></i></a>
+        and CloudRead <a href="https://github.com/jfspps/CloudRead" target="_blank"><i class="fa fa-github"></i></a>
       </h1>
     </div>
   </div>
@@ -79,15 +81,41 @@
       <div class="col-md-12">
         <h2>Overview</h2>
         <p>
-          CloudWrite is an article planning/authoring tool designed particularly for science writers.
-          Multiple users can login and edit each article making CloudWrite a collaborative tool.
-          A REST API web service is offered and can publish either XML or JSON feeds. Many of the technologies
+          CloudWrite and CloudRead are article planning/authoring tools designed particularly for science writers.
+          Users login and edit each article through CloudWrite and have the added option of viewing them (read-only) on
+          CloudRead. CloudRead also permits users to download an article as a DOCX file and then edit the article as
+          desired.
+        </p>
+        <p>
+          CloudWrite represents the REST API web service and can publish either XML or JSON feeds. Many of the
+          technologies
           (e.g. H2 and MySQL databases, BCrypt, CSRF and timestamps) learned when building <a
             href="SRM.html">Secure-SRM</a>
           are also applied here.
         </p>
         <p>
-          A compiled JAR file is provided <a href="https://github.com/jfspps/CloudWrite/tree/main/JAR" target="_blank">here</a> for demonstration purposes.
+          CloudRead is the REST API client that consumes XML and can present all articles in a browser. The interface to
+          CloudRead is essentially the same as CloudWrite (shown here).
+          CloudRead utilises DOCX4J as a means to export Java object properties/fields as DOCX files. Unlike CloudWrite, CloudRead is not
+          backed by Spring Security.
+        </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Demo</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <p>
+          A compiled JAR file for CloudWrite, with <a
+            href="https://github.com/jfspps/CloudRead#running-cloudread-client-with-cloudwrite-service"
+            target="_blank">guidelines</a>, is provided <a href="https://github.com/jfspps/CloudWrite/tree/main/JAR"
+            target="_blank">here</a> for demonstration purposes. A compiled JAR file for CloudRead with instructions is
+          provided <a href="https://github.com/jfspps/CloudRead/tree/main/JAR" target="_blank">here</a>.
         </p>
       </div>
     </div>
@@ -101,9 +129,13 @@
     <div class="row">
       <div class="col-md-12">
         <p>
-          Currently, I am a freelance science writer and also maintain <a href="https://www.learningchem.co.uk" target="_blank">LearningChem</a>
-           where I publish articles for students and teachers. Following on from my experience of building <a href="SRM.html">Secure-SRM</a>, I decided to build an app which
-           would help me plan new articles. I also wanted to revisit Spring development and get some experience with building a REST API web service.
+          Currently, I am a freelance science writer and also maintain <a href="https://www.learningchem.co.uk"
+            target="_blank">LearningChem</a>
+          where I publish articles for students and teachers. Following on from my experience of building <a
+            href="SRM.html">Secure-SRM</a>, I decided to build an app which
+          would help me plan new articles. I also wanted to revisit Spring development and get some experience with
+          building a REST API web service and client. Additionally, I wanted to get more experience with file handling
+          and generate DOCX files from Java objects.
         </p>
       </div>
     </div>
@@ -111,7 +143,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h2>Landing page</h2>
+        <h2>Landing page for CloudWrite</h2>
         <p>
           Users authenticate their identity and are then granted equal read/write authorisation roles for all articles
           on file.
@@ -150,7 +182,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h2>User admin page</h2>
+        <h2>CloudWrite user admin page</h2>
         <p>
           Users can update their own password.
         </p>
@@ -172,8 +204,9 @@
       <div class="col-md-12">
         <h2>Research and fundamental pieces</h2>
         <p>
-          An research piece/article highlights an area of research. A fundamental piece is an article which explains key concept(s).
-           The user pages for research pieces (below) and fundamental pieces are similar.
+          An research piece/article highlights an area of research. A fundamental piece is an article which explains key
+          concept(s).
+          The CloudWrite and CloudRead user interfaces for research pieces (below) and fundamental pieces are similar.
         </p>
       </div>
     </div>
@@ -181,8 +214,8 @@
     <div class="row">
       <div class="col-md-12">
         <figure>
-          <img img alt="CloudWrite research piece" src="images/CloudWrite_Research.png" class="mx-auto img-fluid d-block"
-            style="width: 100%">
+          <img img alt="CloudWrite research piece" src="images/CloudWrite_Research.png"
+            class="mx-auto img-fluid d-block" style="width: 100%">
         </figure>
       </div>
     </div>
@@ -190,7 +223,7 @@
     <div class="row">
       <div class="col-md-12">
         <p>
-          Users can create new research pieces (below) and fundamental pieces.
+          With CloudWrite, users can create new research pieces (below) and fundamental pieces.
         </p>
       </div>
     </div>
@@ -198,8 +231,8 @@
     <div class="row">
       <div class="col-md-12">
         <figure>
-          <img img alt="CloudWrite new research piece" src="images/CloudWrite_NewRes.png" class="mx-auto img-fluid d-block"
-            style="width: 100%">
+          <img img alt="CloudWrite new research piece" src="images/CloudWrite_NewRes.png"
+            class="mx-auto img-fluid d-block" style="width: 100%">
         </figure>
       </div>
     </div>
@@ -208,10 +241,12 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h2>REST API</h2>
+        <h2>REST API documentation</h2>
         <p>
-          The REST API web service is documented using OpenAPI (formerly Swagger). A shortcut to the OpenAPI documentation page is provided at the login page.
-          All users, authenticated or not, are permitted read-only access to all research and fundamental pieces. In addition, users can search by keyword to narrow down the returns.
+          The CloudWrite REST API web service is documented using OpenAPI (formerly Swagger). A shortcut to the OpenAPI
+          documentation page is provided at the login page.
+          All users, authenticated or not, are permitted read-only access to all research and fundamental pieces. In
+          addition, users can search by keyword to narrow down the returns.
         </p>
       </div>
     </div>
@@ -225,17 +260,17 @@
       </div>
     </div>
 
-  <hr />
+    <hr />
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"></script>
 </body>
 
 </html>
