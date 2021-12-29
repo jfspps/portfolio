@@ -105,7 +105,7 @@
 
     <div class="row">
       <div class="col-md-12">
-        <h2>AWS and Docker image demo</h2>
+        <!-- <h2>AWS and Docker image demo</h2>
         <p>
           The application is hosted on AWS BeanStalk (EC2 instances scheduled to run 0900-1200 UTC, Mon-Fri) <a
             href="http://securesrm-env.eba-wdbke2kz.eu-west-2.elasticbeanstalk.com/" target="_blank">here</a>. A Docker
@@ -122,7 +122,25 @@
         </ol>
         <p>
           Please remember to logout from the AWS demo.
+        </p> -->
+        <h2>Docker image demo</h2>
+        <p>
+          A Docker image is available <a href="https://hub.docker.com/r/jfspps/secure-srm" target="_blank">here</a>.
         </p>
+        <p>
+          The project uses port 5000 by default and can be mapped to the host's port by changing the value for xxxx:
+        </p>
+        <p style="font-style: italic;">
+          docker run -d -p xxxx:5000 jfspps/secure-srm
+        </p>
+        <p>
+          Open a browser and go to "localhost:xxxx" to login. Use any of the three user types (each with different access levels):
+        </p>
+        <ol>
+          <li>Admin user username: "amysmith", password: "amysmith123"</li>
+          <li>Teacher user username: "marymanning", password: "marymanning123"</li>
+          <li>Guardian user username: "alexsmith", password: "alexsmith123"</li>
+        </ol>
         <p>
           In general, Admin users are able to add, remove or update Teacher and Guardian accounts. Admin users cannot
           edit student results.
